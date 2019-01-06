@@ -17,15 +17,20 @@
 @endsection
 @section('content')
 
-<?php $formNamesa=array("Advanced Level Application","Ordinary Level Application","10","1","2","3","4","5"); ?>
+<?php $formNamesa=array("Advanced Level Application","Ordinary Level Application","SSC MTS Application","Diploma for Artificer Apprentices","Pearson BTEC Level 5 HND ","Open Competitive Examination Form","Open Competitive Examination ","Open Competitive Examination "); ?>
+<?php $formDescriptiona=array("A/L Application Form for Private Applicant","O/L Application Form for Private Applicant","SSC MTS Application Form 2018","Diploma for Artificer Apprentices 2019 – Sri Lanka Navy","Pearson BTEC Level 5 HND 2018","Open Competitive Examination 2018","Open Competitive Examination ","Open Competitive Examination ",""); ?>
 
-<?php $formDescription=array("A/L Application Form for Private Applicant","O/L Application Form for Private Applicant","","","","","","",""); ?>
 
-<?php $formNamesb=array("16001343","16001352","10","1","2","3","4","5"); ?>
+<?php $formNamesb=array("Home Loan (Sinhala) Application","Pension Advance","SSC MTS Application","Pensioners’ Loan (English) Apprentices","Pearson BTEC Level 5 HND ","Open Competitive Examination Form","Open Competitive Examination ","Open Competitive Examination "); ?>
+<?php $formDescriptionb=array(" Home Loan (Sinhala) in HND Bank","Pension Advance in HND Bank","Pensioners’ Loan (English) Form 2018","Diploma for Artificer Apprentices 2019 – Sri Lanka Navy","Pearson BTEC Level 5 HND 2018","Open Competitive Examination 2018","Open Competitive Examination ","Open Competitive Examination ",""); ?>
 
-<?php $formNamesc=array("16001343","16001352","10","1","2","3","4","5"); ?>
 
-<?php $formNamesd=array("16001343","16001352","10","1","2","3","4","5"); ?>
+<?php $formNamesc=array("Advanced Level Application","Ordinary Level Application","SSC MTS Application","Diploma for Artificer Apprentices","Pearson BTEC Level 5 HND ","Open Competitive Examination Form","Open Competitive Examination ","Open Competitive Examination "); ?>
+<?php $formDescriptionc=array("A/L Application Form for Private Applicant","O/L Application Form for Private Applicant","SSC MTS Application Form 2018","Diploma for Artificer Apprentices 2019 – Sri Lanka Navy","Pearson BTEC Level 5 HND 2018","Open Competitive Examination 2018","Open Competitive Examination ","Open Competitive Examination ",""); ?>
+
+
+<?php $formNamesd=array("Advanced Level Application","Ordinary Level Application","SSC MTS Application","Diploma for Artificer Apprentices","Pearson BTEC Level 5 HND ","Open Competitive Examination Form","Open Competitive Examination ","Open Competitive Examination "); ?>
+<?php $formDescriptiond=array("A/L Application Form for Private Applicant","O/L Application Form for Private Applicant","SSC MTS Application Form 2018","Diploma for Artificer Apprentices 2019 – Sri Lanka Navy","Pearson BTEC Level 5 HND 2018","Open Competitive Examination 2018","Open Competitive Examination ","Open Competitive Examination ",""); ?>
 
 <?php $index=-1; $index1=-1; $index2=-1; $index3=-1;?>
 
@@ -51,7 +56,7 @@
                                 <h5>{{$formNamesa[++$index]}} </h5>
                                 <ul>
                                     <li><a href="/files/{{$formNamesa[$index]}}.pdf" download><font color="blue" >Click Here To Download&nbsp;</font><span class="glyphicon glyphicon-download-alt"> </a></li>
-                                    <li>{{$formDescription[$index]}}</li>
+                                    <li>{{$formDescriptiona[$index]}}</li>
                                 </ul>
                             </div><!-- category-avt -->	
                         </div>
@@ -72,7 +77,7 @@
                                 <h5>{{$formNamesb[++$index1]}} </h5>
                                 <ul>
                                     <li><a href="/files/{{$formNamesb[$index1]}}.pdf" download><font color="blue" >Click Here To Download&nbsp;</font><span class="glyphicon glyphicon-download-alt"> </a></li>
-                                    
+                                    <li>{{$formDescriptionb[$index1]}}</li>
                                 </ul>
                             </div><!-- category-avt -->	
                         </div>
@@ -92,7 +97,7 @@
                                 <h5>{{$formNamesc[++$index2]}} </h5>
                                 <ul>
                                     <li><a href="/files/{{$formNamesc[$index2]}}.pdf" download><font color="blue" >Click Here To Download&nbsp;</font><span class="glyphicon glyphicon-download-alt"> </a></li>
-                                    
+                                    <li>{{$formDescriptionc[$index2]}}</li>
                                 </ul>
                             </div><!-- category-avt -->	
                         </div>
@@ -112,7 +117,7 @@
                                 <h5>{{$formNamesd[++$index3]}}  </h5>
                                 <ul>
                                     <li><a href="/files/{{$formNamesd[$index3]}}.pdf" download><font color="blue" >Click Here To Download&nbsp;</font><span class="glyphicon glyphicon-download-alt"> </a></li>
-                                    
+                                    <li>{{$formDescriptiond[$index3]}}</li>
                                 </ul>
                             </div><!-- category-avt -->	
                         </div>
