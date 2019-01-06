@@ -12,7 +12,6 @@
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
-
 require('./bootstrap');
 
 window.Vue = require('vue');

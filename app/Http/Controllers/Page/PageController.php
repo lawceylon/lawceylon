@@ -24,8 +24,8 @@ class PageController extends Controller
     {
         $lawyr = Lawyer::where('checked', 1 );
         $lawyers = $lawyr->whereHas('ratings', function($query) {
-            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc')->limit(2);
-        })->get();
+            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc')->limit(8);
+        })->take(8)->get();
         $categories = categories::all();
         $newsrecents = news::orderBy('created_at','DESC')->paginate(8);
         $newschoices = news::where('status',1)->orderBy('created_at','DESC')->paginate(8);
@@ -142,7 +142,10 @@ class PageController extends Controller
 
     public function get()
     {
-        $contacts = User::all();
+        $lawyr = Lawyer::where('checked', 1 );
+        $contacts = $lawyr->whereHas('ratings', function($query) {
+            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc')->limit(8);
+        })->get();
         return response()->json($contacts);
     }
 

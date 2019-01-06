@@ -3,8 +3,8 @@
         <ul>
             <li v-for="contact in sortedContacts" :key="contact.id" @click="selectContact(contact)" :class="{'selected': contact == selected}">
                 <div class="contact">
-                  <p class="name">{{contact.name}} {{contact.email}}</p>
-                  <p class="type">{{contact.role}}</p>
+                  <p class="name">{{contact.firstName}} {{contact.Email}}</p>
+                  <p class="type">{{contact.gender}}</p>
                 </div>
                 <span class="unread" v-if="contact.unread">{{contact.unread}}</span>
             </li>

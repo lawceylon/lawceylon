@@ -33,7 +33,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($cmessages as $xmessage)
+                @foreach($cmessages as $cmessage)
                   <tr>
                       <td>{{$loop->index+1}}</td>
                       <td>{{ $cmessage->c_id }}</td>
