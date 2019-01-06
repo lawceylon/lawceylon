@@ -29,6 +29,7 @@ Route::group(['namespace' => 'Page'],function(){
     Route::get('/chat','PageController@chat')->name('chat');
     Route::get('/conversation/{id}','PageController@getMessagesFor');
     Route::get('/conversation/send','PageController@send');
+    Route::get('/vediochat','PageController@vediochat')->name('vediochat');
     
 });
 

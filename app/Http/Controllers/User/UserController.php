@@ -93,7 +93,7 @@ class UserController extends Controller
     { 
         $Client = session('client');
         $client = DB::table('users')->where('id', $Client)->first();  
-        return view('User.editClientProfile',compact('client'));
+        return view('user.editClientProfile',compact('client'));
     }
 
 

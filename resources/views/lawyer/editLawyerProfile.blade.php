@@ -129,7 +129,7 @@
                                 <div class="eform-group">
                                     <label class="col-sm-2 control-label">New password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,30}"><span ></span>
+                                        <input type="password" class="form-control" id="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,30}"><span ></span>
                                         <br>
                                         <div id="message">
                                             <h6>Password must contain the following:</h6>
@@ -139,7 +139,7 @@
                                             <p id="length" class="invalid">Minimum <b>5 characters</b></p>
                                         </div>
                                         <script>
-                                            var myInput = document.getElementById("password");
+                                            var myInput = document.getElementById("Password");
                                             var letter = document.getElementById("letter");
                                             var capital = document.getElementById("capital");
                                             var number = document.getElementById("number");

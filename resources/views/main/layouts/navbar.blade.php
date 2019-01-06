@@ -86,6 +86,7 @@
                         <li><a href="{{route('laws')}}">Law Reference</a></li>
                         <li><a href="{{route('contactus')}}">Contact Us</a></li>
                         <li><a href="{{route('chat')}}">Chat</a></li>
+                        <li><a href="{{route('vediochat')}}">Vedio Chat</a></li>
                     </ul>
                 </div>
             </div>

@@ -105,7 +105,7 @@ class PageController extends Controller
 
     public static function getLawyers()
     {
-    	$lawyers = DB::table('lawyers')->get();
+    	$lawyers = DB::table('lawyers')->where('checked',1)->get();
         return view('main.search',['lawyers'=>$lawyers]);
     
     }
@@ -144,6 +144,10 @@ class PageController extends Controller
     public function chat()
     {
         return view('main.chat');
+    }
+    public function vediochat()
+    {
+        return view('main.vediochat');
     }
 
     public function getMessagesFor($id)

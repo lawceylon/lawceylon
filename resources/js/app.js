@@ -24,6 +24,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('profilechat-app', require('./components/ProfileChatApp.vue'));
+Vue.component('vediochat-app', require('./components/VedioChatApp.vue'));
 
 const app = new Vue({
     el: '#app'
