@@ -14,16 +14,16 @@
                     <div class="footer-widget link-widget">
                         <h3>Useful Links</h3>
                         <ul>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Support & Help</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Affiliate Program</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Knowledge Base</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Career With Us</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Contact</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> How It Works</a></li>
+                            <li><a href="{{ route('mainpage') }}"> <i class="fa fa-angle-double-right"></i> Home</a></li>      
+                            <li><a href="{{route('tutorial')}}"> <i class="fa fa-angle-double-right"></i> Support & Help</a></li>
+                            <li><a href="{{ route('register') }}"> <i class="fa fa-angle-double-right"></i> Register</a></li>   
+                            <li><a href="{{route('search')}}"> <i class="fa fa-angle-double-right"></i> Advanced Search</a></li>
+                            <li><a href="{{route('laws')}}"> <i class="fa fa-angle-double-right"></i> Law References</a></li>
+                            <li><a href="{{route('mapsearch')}}"> <i class="fa fa-angle-double-right"></i> Map Search</a></li>
+                            <li><a href="{{route('downloads')}}"> <i class="fa fa-angle-double-right"></i> Form Downloads</a></li>
                             <li><a href="#"> <i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Advertise Policy</a></li>
+                            <li><a href="{{route(contactus)}}"> <i class="fa fa-angle-double-right"></i> Contact Us</a></li>
                             <li><a href="#"> <i class="fa fa-angle-double-right"></i> Terms Of Service</a></li>
-                            <li><a href="#"> <i class="fa fa-angle-double-right"></i> Support</a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,14 +31,14 @@
                     <div class="footer-widget contact-widget">
                         <h3>Contact Us</h3>
                         <ul>
-                             <li><span><i class="fa fa-envelope"></i> E-mail :</span> <a href="mailto:#">lawceylon@gmail.com</a></li>
+                             <li><span><i class="fa fa-envelope"></i> E-mail :</span> <a href="mailto:lawceylon@gmail.com">lawceylon@gmail.com</a></li>
                              <li>
                                  <ul class="list-inline social">
-                                    <li><a class="facebook" href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a class="twitter" href="#"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a class="google" href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li><a class="facebook" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-facebook-square"></i></a></li>
+                                    <li><a class="twitter" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-twitter-square"></i></a></li>
+                                    <li><a class="google" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-google-plus-square"></i></a></li>
+                                    <li><a class="instagram" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a class="youtube" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-youtube-play"></i></a></li>
                                 </ul>
                              </li>
                         </ul>
@@ -49,8 +49,8 @@
     </div><!-- footer-top -->
 </footer><!-- footer -->
 <script src="{{ asset('main/js/bootstrap.min.js') }}"></script>
-<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="{{ asset('main/js/gmaps.min.js') }}"></script>
+{{-- <script src="https://maps.google.com/maps/api/js?sensor=true"></script> --}}
+{{-- <script src="{{ asset('main/js/gmaps.min.js') }}"></script> --}}
 <script src="{{ asset('main/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('main/js/custom.js') }}"></script>
 

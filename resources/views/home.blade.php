@@ -1,6 +1,6 @@
 @extends('main.app')
+@section('title','Lawceylon homepage')
 @section('content')
-
 <div class="home-page">
     <div id="home-section" class="parallax-section carousel slide" data-ride="carousel">
         <div class="carousel-inner">

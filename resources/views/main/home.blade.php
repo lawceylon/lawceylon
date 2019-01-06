@@ -1,5 +1,5 @@
 @extends('main.app')
-@section('title','Lawceylon-Homepage')
+@section('title','Lawceylon Homepage')
 @section('headSection')
 <style>
     .ch-grid {
@@ -222,14 +222,15 @@
                                             <div class="item-description">
                                                 <div class="item-meta">
                                                     <div class="item-post-date">
-                                                            <span>{{ $newsrecent->created_at }}</span>
+                                                            <span>{{ $newsrecent->created_at->diffForHumans() }}</span>
+                                                            {{-- {{ date('M j,Y',strtotime($post->created_at))}} --}}
                                                     </div>
                                                 </div>
                                                 <div class="item-title">
-                                                    <h3><a href="{{ route('news',$newsrecent->slug) }}"><b>{{ str_limit(strip_tags($newsrecent->title), 40) }}</b></a></h3>
+                                                    <h3><a href="{{ route('news',$newsrecent->slug) }}"><b>{{ str_limit(strip_tags($newsrecent->title), 30) }}</b></a></h3>
                                                 </div>
                                                 <div class="item-info">
-                                                    <p>{{ str_limit(strip_tags($newsrecent->subtitle), 40) }}</p>
+                                                    <p>{{ str_limit(strip_tags($newsrecent->subtitle), 30) }}</p>
                                                 </div>
                                             </div><!-- item-description -->
                                         </div><!-- item -->

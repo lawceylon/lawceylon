@@ -82,7 +82,7 @@
                                                 <li>Consultation Fee  :  {{$b->consultationFee}}</li>
                                             </ul>
                                         <!-- put the profiles url in button  like   profile/{{$b->id}} -->
-                                        <button type="button" class="btn btn-outline-secondary mb-3">Go To Full Profile</button>
+                                        <button type="button" class="btn btn-outline-secondary mb-3" onclick='MyFunc({{$b->id}})'>Go To Full Profile</button>
                                     </div>
                                 </div>
                             </div>

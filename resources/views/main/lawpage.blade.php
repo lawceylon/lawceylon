@@ -1,5 +1,5 @@
 @extends('main.app')
-@section('title','Lawceylon-Newspage')
+@section('title','Lawceylon law reference page')
 @section('content')
 <div class="page">
 	<div class="ad-post-wrapper section">

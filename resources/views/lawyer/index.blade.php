@@ -1,14 +1,11 @@
 @extends('main.app')
+@section('title','Lawceylon lawyer profile')
 @section('headSection') 
-    {{-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> --}}
     <link href="{{ asset('css/piyumika.css') }}" rel="stylesheet">
     <script type="text/javascript" src="/js/piyumika.js"></script>
-  
     <!-- for ratings -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
-
-    {{-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>  
 @endsection
 @section('content')
@@ -152,19 +149,19 @@
                             </a>  
                             <div class="form-popup" id="notification">
                                 <form action="/notification" class="form-container" method="POST">
-                                {{ csrf_field() }}
+                                    <br>
+                                    <br>
+                                    {{ csrf_field() }}
                                     @if($notification)
                                         @foreach($clients as $client)
-                                            <li class="notification">
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <strong class="notification-title"><a href='{{ route('userViewLawyer',[$client->id])}}'>{{$client->name." ".$client->lastname}}</a> </strong>has sent you an {{$client->title}} appointment request.
-                                                        <div class="notification-meta">
-                                                            <strong>on {{$client->start_date}} at {{$client->time}}</strong>
-                                                        </div>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <strong class="notification-title"><a href='{{ route('userViewLawyer',[$client->id])}}'>{{$client->name." ".$client->lastname}}</a> </strong>has sent you an {{$client->title}} appointment request.
+                                                    <div class="notification-meta">
+                                                        <strong>on {{$client->start_date}} at {{$client->time}}</strong>
                                                     </div>
                                                 </div>
-                                            </li>
+                                            </div>
                                             <div class="form-group btn-group-xs">
                                                 <button name="accept" type="submit" class="btn btn-success btn-xs" value="{{$client->id}}">Accept</button>
                                                 <button name="reject" type="submit" class="btn btn-warning btn-xs" value="{{$client->id}}">Reject</button>
