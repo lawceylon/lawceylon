@@ -20,11 +20,10 @@ class markersController extends Controller
     }
 
 
-    public function show($lawfirm){
+    public function show($lawfirm)
+    {
       $nameresult = marker::where('name', '=', "{$lawfirm}");
-      $lawyersIn= lawyers::where('Address','like',"%{$lawfirm}%");
-      
-      $lawyersIn = DB::table('lawyers')->where('Address', "{$lawfirm}")->get();
+      $lawyersIn= lawyers::where('Address','like',"%{$lawfirm}%")->where('checked',1)->get();
       return view('main.markers.show',compact('nameresult','lawyersIn'));
     }
 

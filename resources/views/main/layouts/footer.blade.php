@@ -49,8 +49,8 @@
     </div><!-- footer-top -->
 </footer><!-- footer -->
 <script src="{{ asset('main/js/bootstrap.min.js') }}"></script>
-{{-- <script src="https://maps.google.com/maps/api/js?sensor=true"></script> --}}
-{{-- <script src="{{ asset('main/js/gmaps.min.js') }}"></script> --}}
+<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="{{ asset('main/js/gmaps.min.js') }}"></script>
 <script src="{{ asset('main/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('main/js/custom.js') }}"></script>
 

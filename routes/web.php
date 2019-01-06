@@ -25,6 +25,7 @@ Route::group(['namespace' => 'Page'],function(){
     Route::view('/tutorial/tutorials2','main.tutorials.tutorials2');
     Route::view('/tutorial/tutorials3','main.tutorials.tutorials3');
     Route::view('/tutorial/tutorials4','main.tutorials.tutorials4');
+    Route::get('/aboutUs','PageController@getaboutUs')->name('aboutUs');
     Route::get('/contacts','PageController@get');
     Route::get('/chat','PageController@chat')->name('chat');
     Route::get('/conversation/{id}','PageController@getMessagesFor');

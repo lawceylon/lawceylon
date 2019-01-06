@@ -119,6 +119,11 @@ class PageController extends Controller
     public function contactUs(){
         return view('main.contactus');
     }
+
+    public static function getaboutUs()
+    {
+        return view('main.aboutUs');
+    }
     
     public function contactUsSave(Request $request){
         $name=$request->get('name');
