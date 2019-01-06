@@ -1,5 +1,5 @@
 @extends('main.app')
-@section('title','Lawceylon-Newspage')
+@section('title','Lawceylon law reference pages')
 @section('content')
 <div class="page">
 	<div id="breadcrumb-section" class="section">

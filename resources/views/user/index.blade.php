@@ -1,15 +1,14 @@
 @extends('main/app')
-
-@section('title','Lawceylon-Newspage')
-@section('content')
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+@section('title','Lawceylon user profile')
+@section('headSection')
+    {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> --}}
+    {{-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>  
     <script type="text/javascript" src="/js/piyumika.js"></script>
     <link href="{{ asset('css/piyumika.css') }}" rel="stylesheet">
-    
-    
+@endsection   
+@section('content') 
 <div class="page">
     <div id="breadcrumb-section" class="section">
         <div class="container">

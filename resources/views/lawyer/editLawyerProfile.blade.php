@@ -1,4 +1,5 @@
 @extends('main.app')
+@section('title','Lawceylon edit lawyer profile')
 @section('headSection')
     <link href="{{ asset('css/piyumika.css') }}" rel="stylesheet">
     <script type="text/javascript" src="/js/piyumika.js"></script>

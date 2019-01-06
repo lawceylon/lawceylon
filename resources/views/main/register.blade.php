@@ -1,4 +1,5 @@
 @extends('main.app')
+@section('title','Lawceylon register page')
 @section('headSection')
 <link rel="stylesheet" type="text/css" href="/css/piyumika.css">
 <script type="text/javascript" src="/js/piyumika.js"></script>

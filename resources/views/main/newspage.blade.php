@@ -1,5 +1,5 @@
 @extends('main.app')
-@section('title','Lawceylon-Newspage')
+@section('title','Lawceylon newspage')
 @section('content')
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

@@ -1,4 +1,5 @@
 @extends('main/app')
+@section('title','Lawceylon lawyer view user')
 @section('content')    
 <div class="page">
     <div id="breadcrumb-section" class="section">

@@ -1,5 +1,5 @@
 @extends('main.app')
-@section('title','Lawceylon-Newspage')
+@section('title','Lawceylon Newspage')
 @section('content')
 <div class="page">
     <div class="all-categories section">

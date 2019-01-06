@@ -1,4 +1,5 @@
 @extends('main.app')
+@section('title','Lawceylon form download page')
 @section('headSection')
 <style>
     div.a {

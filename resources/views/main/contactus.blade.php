@@ -1,4 +1,5 @@
 @extends('main.app')
+@section('title','Lawceylon contact us')
 @section('content')
 <section class="mb-4">
     <div class="col-md-2"></div>

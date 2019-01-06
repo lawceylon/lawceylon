@@ -1,5 +1,5 @@
 @extends('main/app')
-
+@section('title','Lawceylon payment')
 @section('content')
  <div class="container">
   <div class="row">
