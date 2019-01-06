@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 use Pusher\Pusher;
 use Auth;
+use Mail;
 use DB;
 
 class UserController extends Controller

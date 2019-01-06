@@ -34,7 +34,7 @@
                   <th>Experience Period</th> --}}
                   <th>Address</th>
                   <th>Phone</th>
-                  <th>Biography</th>
+                  {{-- <th>Biography</th> --}}
                   <th>Consultation Fee</th>
                 </tr>
               </thead>
@@ -53,7 +53,7 @@
                       <td>{{ $lawyer->Experience_Period }}</td> --}}
                       <td>{{ $lawyer->Address }}</td>
                       <td>{{ $lawyer->TP_Number }}</td>
-                      <td>{{ $lawyer->biography }}</td>
+                      {{-- <td>{{ $lawyer->biography }}</td> --}}
                       <td>{{ $lawyer->consultationFee }}</td>
                       <td><a class="btn btn-success" href="{{ route('unregister.edit',$lawyer->id) }}">View Details</a></td>
                       <td>
@@ -89,7 +89,7 @@
                   <th>Experience Period</th> --}}
                   <th>Address</th>
                   <th>Phone</th>
-                  <th>Biography</th>
+                  {{-- <th>Biography</th> --}}
                   <th>Consultation Fee</th>
                 </tr>
               </tfoot>

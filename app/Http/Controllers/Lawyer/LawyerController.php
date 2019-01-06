@@ -13,6 +13,7 @@ use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 use App\Model\Lawyer\Event;
 use Image;
 use Auth;
+use Mail;
 use DB;
 
 class LawyerController extends Controller {

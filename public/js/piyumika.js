@@ -4,7 +4,7 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip(); 
 });
 
-var myInput = document.getElementById("password");
+var myInput = document.getElementById("Password");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
@@ -64,7 +64,7 @@ myInput.onkeyup = function() {
 function checkPass()
 {
     //Store the password field objects into variables ...
-    var pass1 = document.getElementById('password');
+    var pass1 = document.getElementById('Password');
     var pass2 = document.getElementById('password_confirmation');
     //Store the Confimation Message Object ...
     var message = document.getElementById('confirmMessage');

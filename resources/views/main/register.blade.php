@@ -271,7 +271,7 @@
                                         <input type="ptext" id="bar" name="barnumber"pattern="[V0-9]{10}"  required><span ></span>
                                     
                                         <label class="plabel" for="password">Password:</label>
-                                        <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,30}"  required><span ></span><br>
+                                        <input type="password" id="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,30}"  required><span ></span><br>
                                         
                                         <div id="message">
                                             <h6>Password must contain the following:</h6>
@@ -282,7 +282,7 @@
                                         </div>
                                     
                                         <script>
-                                            var myInput = document.getElementById("password");
+                                            var myInput = document.getElementById("Password");
                                             var letter = document.getElementById("letter");
                                             var capital = document.getElementById("capital");
                                             var number = document.getElementById("number");
