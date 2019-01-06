@@ -13,18 +13,14 @@
         <div class="container">
             <form action="{{ route('lawsearch') }}">
                 <div class="search-section">
-                    <ul>
-                        <li>
-                        </li>
-                        <li>
-                        </li>
-                        <li>
-                            <input type="text" name="keyword" class="form-control" placeholder="What are you looking for ?">
-                        </li>
-                        <li>
-                            <button type="submit" class="form-control btn btn-primary" value="Search">Search</button>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input style="width:100%" type="text" name="nameSearch" class="form-control" placeholder="What are you looking for ?">
+                        </div>
+                        <div class="col-md-2">
+                            <input style="width:100%" type="submit" class="btn btn-primary" value="Search">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

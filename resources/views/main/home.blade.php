@@ -148,21 +148,14 @@
         <div class="container">
             <form action="search" method="GET">
                 <div class="search-section">
-                    <ul>
-                        <li>
-                        </li>
-                        <li>
-                        </li>
-                        <li>
-                            <input type="text" name="nameSearch" class="form-control" placeholder="What are you looking for ?">
-                        </li>
-                        <li>
-                            <input type="submit" class="btn btn-primary" value="Search">
-                        </li>
-                        {{-- <li>
-                            {{ auth()->user() }}
-                        </li> --}}
-                    </ul>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input style="width:100%" type="text" name="nameSearch" class="form-control" placeholder="What are you looking for ?">
+                        </div>
+                        <div class="col-md-2">
+                            <input style="width:100%" type="submit" class="btn btn-primary" value="Search">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
