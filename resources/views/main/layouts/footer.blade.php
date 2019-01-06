@@ -22,7 +22,7 @@
                             <li><a href="{{route('mapsearch')}}"> <i class="fa fa-angle-double-right"></i> Map Search</a></li>
                             <li><a href="{{route('downloads')}}"> <i class="fa fa-angle-double-right"></i> Form Downloads</a></li>
                             <li><a href="#"> <i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
-                            <li><a href="{{route(contactus)}}"> <i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                            <li><a href="{{route('contactus')}}"> <i class="fa fa-angle-double-right"></i> Contact Us</a></li>
                             <li><a href="#"> <i class="fa fa-angle-double-right"></i> Terms Of Service</a></li>
                         </ul>
                     </div>
