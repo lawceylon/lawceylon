@@ -76,17 +76,17 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('mainpage') }}">Home</a></li>
-                        {{-- <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Services<span class="caret"></span></a>
+                        <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Services<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="category-list.html">Main Category</a></li>
+                                <li><a href="{{route('downloads')}}">Download Forms</a></li>
+                                <li><a href="{{route('mapsearch')}}">Advanced MapSearch</a></li>
+                                <li><a href="{{route('chat')}}">Chat</a></li>
+                                <li><a href="{{route('vediochat')}}">Vedio Chat</a></li>
                             </ul>
-                        </li> --}}
-                        <li><a href="{{route('downloads')}}">Services</a></li>
+                        </li>
                         <li><a href="{{route('tutorial')}}">Tutorial</a></li>
                         <li><a href="{{route('laws')}}">Law Reference</a></li>
                         <li><a href="{{route('contactus')}}">Contact Us</a></li>
-                        <li><a href="{{route('chat')}}">Chat</a></li>
-                        <li><a href="{{route('vediochat')}}">Vedio Chat</a></li>
                     </ul>
                 </div>
             </div>

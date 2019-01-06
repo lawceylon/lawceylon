@@ -14,7 +14,7 @@ Route::group(['namespace' => 'Page'],function(){
     Route::resource('/reglawyer','RegLawyerController');
     Route::get('/lawfirms', 'Map\markersController@index');//ok
     Route::get('/lawfirms/{lawfirm}', 'Map\markersController@show');//ok
-    Route::get('/mapsearch', 'Map\MapController@gmaps');//ok
+    Route::get('/mapsearch', 'Map\MapController@gmaps')->name('mapsearch');//ok
     Route::get('/lawsearch', 'PageController@lawsearch')->name('lawsearch');//ok
     Route::get('/news-search', 'PageController@newsearch')->name('newsearch');//ok
     Route::get('/reg', 'PageController@reg')->name('reg');//ok
