@@ -14343,8 +14343,9 @@ module.exports = __webpack_require__(69);
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -14359,7 +14360,6 @@ module.exports = __webpack_require__(69);
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
-
 __webpack_require__(16);
 
 window.Vue = __webpack_require__(39);
@@ -48214,10 +48214,12 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__profileConversation__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__profileConversation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__profileConversation__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profielcontactlist__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profielcontactlist___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__profielcontactlist__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bootstrap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profileConversation__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profileConversation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__profileConversation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profielcontactlist__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profielcontactlist___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__profielcontactlist__);
 //
 //
 //
@@ -48225,6 +48227,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -48246,6 +48249,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
+        console.log(Echo);
         Echo.private('messages.' + this.user.id).listen('ProfileNewMessage', function (e) {
             _this.handleIncoming(e.message);
         });
@@ -48294,7 +48298,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     },
-    components: { profileConversation: __WEBPACK_IMPORTED_MODULE_0__profileConversation___default.a, profielcontactlist: __WEBPACK_IMPORTED_MODULE_1__profielcontactlist___default.a }
+    components: { profileConversation: __WEBPACK_IMPORTED_MODULE_1__profileConversation___default.a, profielcontactlist: __WEBPACK_IMPORTED_MODULE_2__profielcontactlist___default.a }
 
 });
 
@@ -48968,10 +48972,10 @@ var render = function() {
           [
             _c("div", { staticClass: "contact" }, [
               _c("p", { staticClass: "name" }, [
-                _vm._v(_vm._s(contact.name) + " " + _vm._s(contact.email))
+                _vm._v(_vm._s(contact.firstName) + " " + _vm._s(contact.Email))
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "type" }, [_vm._v(_vm._s(contact.role))])
+              _c("p", { staticClass: "type" }, [_vm._v(_vm._s(contact.gender))])
             ]),
             _vm._v(" "),
             contact.unread

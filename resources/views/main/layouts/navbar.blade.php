@@ -33,9 +33,19 @@
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #669999;">
-                                            <a class="dropdown-item" href="{{ route('user') }}">
-                                                {{ __('Profile') }}
-                                            </a>
+                                            @if(Auth::user()->isUser())
+                                                <a class="dropdown-item" href="{{ route('user') }}">
+                                                    {{ __('Profile') }}
+                                                </a>
+                                            @elseif(Auth::user()->isLawyer())
+                                                <a class="dropdown-item" href="{{ route('lawyer') }}">
+                                                    {{ __('Profile') }}
+                                                </a>
+                                            @else
+                                                <a class="dropdown-item" href="{{ route('admin') }}">
+                                                    {{ __('Profile') }}
+                                                </a>
+                                            @endif
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="{{ route('contactus') }}">
                                                 {{ __('Contact Us') }}

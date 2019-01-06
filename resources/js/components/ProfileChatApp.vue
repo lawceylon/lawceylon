@@ -6,6 +6,7 @@
 </template>
 
 <script>
+    import '../bootstrap';
     import profileConversation from './profileConversation';
     import  profielcontactlist from './profielcontactlist';
     export default{
@@ -24,6 +25,7 @@
             }
         },
         mounted(){
+            console.log(Echo);
             Echo.private(`messages.${this.user.id}`)
                 .listen('ProfileNewMessage',(e)=>{
                     this.handleIncoming(e.message);
