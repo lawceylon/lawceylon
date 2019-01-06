@@ -75,13 +75,12 @@
                                         <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15"><span class="price">{{$b->honorific}} {{$b->firstName}} {{$b->lastName}}</span><span class="h6 text-muted ml-2"></span></h1>
                                     </div>
                                     <div class="card-body pt-0">
-                                        <ul class="list-unstyled mb-4">
-                                            {{-- <li><img src="/images/lawyer/{{$b->image}}" alt="xx Lawyer" id="img"></li> --}}
-                                            <li><img src="{{  asset('images/lawyer/').'/'.$b->image }}" alt="xx Lawyer" id="img"></li>
-                                            <li>Basic support on Github</li>
-                                            <li>Monthly updates</li>
-                                            <li>Free cancelation</li>
-                                        </ul>
+                                            <ul class="list-unstyled mb-4">
+                                                <li><img src="/images/lawyer/{{$b->image}}" alt="xx Lawyer" id="img" width="250" height="250"></li>
+                                                <li>Gender  :  {{$b->gender}}</li>
+                                                <li>Specialist Area  :  {{$b->Specialist_Area}}</li>
+                                                <li>Consultation Fee  :  {{$b->consultationFee}}</li>
+                                            </ul>
                                         <!-- put the profiles url in button  like   profile/{{$b->id}} -->
                                         <button type="button" class="btn btn-outline-secondary mb-3">Go To Full Profile</button>
                                     </div>
@@ -94,5 +93,10 @@
             <ul id="accordion" class="accordion">   
             </ul> 
         </div>
+        <script>
+            function MyFunc(i){
+                window.location.href="https://idnebula.me/lawyerViewUser/"+i;
+            }
+        </script>
     </div>
 @endsection
