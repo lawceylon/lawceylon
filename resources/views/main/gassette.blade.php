@@ -24,6 +24,11 @@
                     </div>
                 @endforeach
             </div>
+            <div class="pager-section">
+                <ul class="pagination">
+                    <li class="next">{{ $gassettes->links() }}</li>
+                </ul>
+            </div><!-- pager-section -->
         </div>
     </div>
 @endsection
