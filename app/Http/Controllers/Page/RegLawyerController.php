@@ -101,7 +101,7 @@ class RegLawyerController extends Controller
             $image = $request->file('file');
             $filename = time().'.'.$image->getClientOriginalName();
             $location = public_path('images/lawyer/'.$filename);
-            Image::make($image)->resize(100,100)->save($location);
+            Image::make($image)->resize(200,200)->save($location);
         }
 
         $lawyer=new lawyer(

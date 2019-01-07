@@ -95,7 +95,7 @@ class LawyerController extends Controller {
             $location=public_path('images/lawyer/'.$filename);
             if($ex=='jpeg' or $ex=='png' or $ex=='jpg'){
                 DB::table('lawyers')->where('id', $lawyer)->update(['image' => $filename]);
-                Image::make($image)->resize(100,100)->save($location);
+                Image::make($image)->resize(200,200)->save($location);
                 return redirect()->back();
             }
         }
