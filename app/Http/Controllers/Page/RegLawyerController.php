@@ -95,6 +95,10 @@ class RegLawyerController extends Controller
         if($email){
             return redirect()->back()->with('message', 'Lawyer already exists!!!');
         }
+        $email2=DB::table('users')->where('email',$user)->count();
+        if($email2){
+            return redirect()->back()->with('message', 'Lawyer already exists!!!');
+        }
 
         if($request->hasFile('file'))
         {
