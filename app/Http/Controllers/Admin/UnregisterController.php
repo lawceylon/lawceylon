@@ -53,6 +53,12 @@ class UnregisterController extends Controller
     public function show($id)
     {
         $lawyer = Lawyer::where('id',$id)->first();
+        $data = array('name'=>$lawyer->firstName);
+        Mail::send(['text'=>'mail'], $data, function($message) use ($lawyer) {
+            $message->to($lawyer->Email, 'Tutorials Point')->subject
+               ('Lawceylon Lawyer Registration Accept Mail');
+            $message->from('dilshanishara73@gmail.com','Lawceylon');
+        });
         DB::table('users')->insert(
             array(
                 'honorific'=>$lawyer->honorific,
@@ -68,12 +74,6 @@ class UnregisterController extends Controller
                 'updated_at'=>Carbon::now()
             )
         );
-        $data = array('name'=>"Lawceylon");
-        Mail::send(['text'=>'mail'], $data, function($message) {
-            $message->to($lawyer->Email, 'Tutorials Point')->subject
-               ('Laravel Basic Testing Mail');
-            $message->from('dilshanishara73@gmail.com','Lawceylon');
-        });
 
         $user = User::where('email',$lawyer->Email)->first();
         $lawyer->checked = 1;

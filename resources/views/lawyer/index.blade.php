@@ -157,7 +157,7 @@
                                         @foreach($clients as $client)
                                             <div class="media">
                                                 <div class="media-body">
-                                                    <strong class="notification-title"><a href='{{ route('userViewLawyer',[$client->id])}}'>{{$client->name." ".$client->lastname}}</a> </strong>has sent you an {{$client->title}} appointment request.
+                                                        <strong class="notification-title"><a href='{{ route('userViewLawyer',[$client->client_id])}}'>{{$client->name." ".$client->lastname}}</a> </strong>has sent you an {{$client->title}} 
                                                     <div class="notification-meta">
                                                         <strong>on {{$client->start_date}} at {{$client->time}}</strong>
                                                     </div>

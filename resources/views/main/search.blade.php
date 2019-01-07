@@ -90,9 +90,23 @@
         </div>
         <script>
             function MyFunc(i){
-                
-                window.location.href="https://idnebula.me/lawyerViewUser/"+i;
-               
+        
+                <?php 
+        
+                    if(auth()->guest()){
+                        $guest=1;
+                    }else{
+                        $guest=0;
+                    }     
+                ?> 
+                var guest='<?php echo $guest ; ?>';
+                if(guest==1){
+                    alert("Warning !!!! \n In order to get the requeted details, please sign in first  !!");
+                }
+                if(guest==0){
+                    
+                    window.location.href="https://idnebula.me/lawyerViewUser/"+i;
+                }
             }
             
                 data=[];

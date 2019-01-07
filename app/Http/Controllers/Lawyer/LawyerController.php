@@ -72,7 +72,7 @@ class LawyerController extends Controller {
         $date=date("Y-m-d");
         //$date = date('Y-m-d', strtotime($d . ' +1 day'));
         $notification=DB::table('events')->where('lawyer_id',$lawyer_id)->where('checked',0)->where('start_date','>=',$date)->count();
-        $clients = DB::table('events')->join('users','users.id','=','events.client_id')->where('events.lawyer_id',$lawyer_id)->where('events.checked',0)->where('events.start_date','>=',$date)->select('events.id','events.title','events.start_date','events.time','users.name','users.lastname','users.email')->get();
+        $clients = DB::table('events')->join('users','users.id','=','events.client_id')->where('events.lawyer_id',$lawyer_id)->where('events.checked',0)->where('events.start_date','>=',$date)->select('events.id','events.title','events.start_date','events.time','users.name','users.lastname','users.email','users.id as client_id')->get();
         return view('lawyer.index',compact('lawyers','lawyerrate','calendar','dataset','ratings','notification','clients'));
     }
 
