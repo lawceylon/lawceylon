@@ -25,7 +25,7 @@
                                         @endif
                                     </li>
                                     <li>
-                                        <a href="{{ route('login') }}" class="fa fa-sign-in btn btn-primary" aria-hidden="true">{{ __('Login') }}</a>
+                                        <a href="{{ route('login') }}" class="btn btn-primary" aria-hidden="true">{{ __('Login') }}</a>
                                     </li>
                                 @else
                                     <li class="nav-item dropdown">

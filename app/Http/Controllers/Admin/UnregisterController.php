@@ -67,6 +67,13 @@ class UnregisterController extends Controller
                 'updated_at'=>Carbon::now()
             )
         );
+
+        Mail::send(['text'=>'mail'], $data, function($message) {
+            $message->to($lawyer->Email, 'Tutorials Point')->subject
+               ('Laravel Basic Testing Mail');
+            $message->from('dilshanishara73@gmail.com','Lawceylon');
+        });
+
         $user = User::where('email',$lawyer->Email)->first();
         $lawyer->checked = 1;
         $lawyer->save();

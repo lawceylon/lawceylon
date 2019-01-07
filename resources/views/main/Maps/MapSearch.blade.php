@@ -5,7 +5,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
     <style>
         #mymap {
-
             width:990px;
             height:700px;
             top: 10px;
@@ -49,7 +48,6 @@
             color:#000000;
         }
         .button1{
-            /* background-color: #00A86B ;  */
             border:  1px solid #00A86B;
             color: black;
             padding: 7px;
@@ -63,7 +61,6 @@
             border-radius: 25px; 
         }   
         .searchButton{
-            /* background-color: #00A86B ;  */
             border:  1px solid #00A86B;
             color: black;
             padding: 7px;
@@ -77,7 +74,7 @@
             border-radius: 25px;
         }
         .dropbtn{
-            /* background-color: #00A86B; */
+            border:  1px solid #00A86B;
             padding: 6px;
             font-size: 17px;
             border: none;

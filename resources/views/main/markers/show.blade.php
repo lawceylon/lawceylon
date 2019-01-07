@@ -6,7 +6,7 @@
     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
     h1 {
-        color: #FFF;
+        /* color: #FFF; */
         font-size: 24px;
         font-weight: 400;
         text-align: center;
