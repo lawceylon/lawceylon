@@ -96,7 +96,7 @@
                                 <h2 data-animation="animated lightSpeedIn">Best lawyers</h2>
                                 <p data-animation="animated lightSpeedIn">Our team is consisting of best lawyers and they are always try to serve you better service...</p>
                                 <div class="ad-btn">
-                                    <a href="#" class="btn btn-primary" data-animation="animated lightSpeedIn">Contact Now</a>
+                                    <a href="{{ route('search') }}" class="btn btn-primary" data-animation="animated lightSpeedIn">Search</a>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                 <h2 data-animation="animated lightSpeedIn">Legal Information</h2>
                                 <p data-animation="animated lightSpeedIn">Our traget is to achieve the best platform which provides accurate legal information about sri lankan laws....</p>
                                 <div class="ad-btn">
-                                    <a href="#" class="btn btn-primary" data-animation="animated lightSpeedIn">Refer Now</a>
+                                    <a href="{{ route('laws') }}" class="btn btn-primary" data-animation="animated lightSpeedIn">Refer Now</a>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                                 <h2 data-animation="animated lightSpeedIn">Excellent Service</h2>
                                 <p data-animation="animated lightSpeedIn">Customer satisfaction is our main responsibility.....</p>
                                 <div class="ad-btn" >
-                                    <a href="#" class="btn btn-primary" data-animation="animated lightSpeedIn">Create Appointment</a>
+                                    <a href="{{ route('tutorial') }}" class="btn btn-primary" data-animation="animated lightSpeedIn">Services</a>
                                 </div>
                             </div>
                         </div>

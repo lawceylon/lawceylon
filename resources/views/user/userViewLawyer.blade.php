@@ -23,8 +23,8 @@
                 <div class="row">
                     <center>
                     <br>
-                    <a href="#"><span id="icon2"   class="fa fa-video-camera" style="font-size:35px;color:black;padding-right:25px"></span></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         
-                    <a href="#"><span id="icon3"  class="fa fa-phone"  style="font-size:35px;color:black;padding-right:25px"></span></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp            
+                    <a href="{{ route('paypal') }}"><span id="icon2"   class="fa fa-video-camera" style="font-size:35px;color:black;padding-right:25px"></span></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         
+                    <a href="{{ route('userVedio') }}"><span id="icon3"  class="fa fa-phone"  style="font-size:35px;color:black;padding-right:25px"></span></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp            
                     <a href="#"><span id="icon4"  class="fa fa-comments" style="font-size:35px;color:black;padding-right:25px"></span></a> 
                     </center> 
                 </div>

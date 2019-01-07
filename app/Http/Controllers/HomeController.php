@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\User\categories;
+use App\Model\User\lawcategories;
 use App\Model\User\news;
 use App\Model\Lawyer\Lawyer;
 
@@ -28,11 +28,10 @@ class HomeController extends Controller
     {
         $lawyr = Lawyer::where('checked', 1 );
         $lawyers = $lawyr->whereHas('ratings', function($query) {
-            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc')->limit(2);
-        })->get();
-        $categories = categories::all();
-        $newses = news::where('status',1)->paginate(8);
+            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc');
+        })->take(5)->get();
+        $categories = lawcategories::all();
         $newsrecents = news::orderBy('created_at', 'desc')->paginate(8);
-        return view('home',compact('newses','newsrecents','categories','lawyers'));
+        return view('home',compact('newsrecents','categories','lawyers'));
     }
 }

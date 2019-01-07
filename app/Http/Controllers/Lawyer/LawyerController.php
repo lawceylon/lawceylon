@@ -211,4 +211,9 @@ class LawyerController extends Controller {
         return view('user.userViewLawyer',compact('client'));
     }
 
+    public function vedioChat()
+    {
+        return view('lawyer.vedio');
+    }
+
 }
