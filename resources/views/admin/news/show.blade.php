@@ -40,7 +40,7 @@
                       <td>{{ $news->title }}</td>
                       <td>{{ $news->subtitle }}</td>
                       <td>{{ $news->slug }}</td>
-                      <td>{{ $news->body }}</td>
+                      <td>{{ str_limit(strip_tags($news->body), 40) }}</td>
                       <td>{{$news->created_at}}</td>
                       <td><a href="{{ route('news.edit',$news->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                       <td>

@@ -227,10 +227,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="item-title">
-                                                    <h3><a href="{{ route('news',$newsrecent->slug) }}"><b>{{ str_limit(strip_tags($newsrecent->title), 40) }}</b></a></h3>
+                                                    <h3><a href="{{ route('news',$newsrecent->slug) }}"><b>{{ str_limit(strip_tags($newsrecent->title), 35) }}</b></a></h3>
                                                 </div>
                                                 <div class="item-info">
-                                                    <p>{{ str_limit(strip_tags($newsrecent->subtitle), 40) }}</p>
+                                                    <p>{{ str_limit(strip_tags($newsrecent->subtitle), 35) }}</p>
                                                 </div>
                                             </div><!-- item-description -->
                                         </div><!-- item -->

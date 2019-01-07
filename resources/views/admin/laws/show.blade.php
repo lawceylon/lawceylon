@@ -45,8 +45,8 @@
                       <td>{{ $law->slug }}</td>
                       <td>{{ $law->subcategory1 }}</td>
                       <td>{{ $law->subcategory2 }}</td>
-                      <td>{{ $law->body }}</td>
-                      <td>{{ $law->exp }}</td>
+                      <td>{{ str_limit(strip_tags($law->body), 40) }}</td>
+                      <td>{{ str_limit(strip_tags($law->exp), 40) }}</td>
                       <td>{{$law->created_at}}</td>
                       <td><a href="{{ route('laws.edit',$law->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                       <td>
