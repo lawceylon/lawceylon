@@ -32,7 +32,7 @@
                                 <h2 data-animation="animated lightSpeedIn">Legal Information</h2>
                                 <p data-animation="animated lightSpeedIn">Our traget is to achieve the best platform which provides accurate legal information about sri lankan laws....</p>
                                 <div class="ad-btn">
-                                    <a href="#" class="btn btn-primary" data-animation="animated lightSpeedIn">Refer Now</a>
+                                    <a href="{{ route('laws') }}" class="btn btn-primary" data-animation="animated lightSpeedIn">Refer Now</a>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 <h2 data-animation="animated lightSpeedIn">Excellent Service</h2>
                                 <p data-animation="animated lightSpeedIn">Customer satisfaction is our main responsibility.....</p>
                                 <div class="ad-btn" >
-                                    <a href="#" class="btn btn-primary" data-animation="animated lightSpeedIn">View Ads</a>
+                                    <a href="{{ route('tutorial') }}" class="btn btn-primary" data-animation="animated lightSpeedIn">Services</a>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +164,7 @@
                     <h2>Our Expertise Areas</h2>
                     <ul style="padding-left:150px;">
                         @foreach($categories as $category)
-                            <li><h2><strong><a href="{{ route('categories',$category->slug) }}"> <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i>{{ $category->name }}</a></strong></h2></li>
+                            <li><h2><strong><a href="{{ route('lawcategories',$category->slug) }}"> <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i>{{ $category->name }}</a></strong></h2></li>
                         @endforeach
                     </ul>
                 </div>
@@ -180,95 +180,45 @@
             </div>
             <div class="category-adds">
                 <div id="category-tab">
-                    <div class="tab-view">
-                        <ul class="list-inline">
-                            {{-- <li class="grid-view-tab"><i class="fa fa-th-large" aria-hidden="true"></i></li>
-                            <li class="small-view-tab"><i class="fa fa-th" aria-hidden="true"></i></li> --}}
-                            <li class="list-view-tab active"><i class="fa fa-th-list" aria-hidden="true"></i></li>
-                        </ul>
-                    </div>
                     <div class="category-tab">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Recent</a></li>
-                            <li role="presentation"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">Popular</a></li>
-                            {{-- <li role="presentation"><a href="#Random" aria-controls="Random" role="tab" data-toggle="tab">Random</a></li> --}}
-                        </ul>
                         <!-- Tab panes -->
                         <div class="tab-content list-view-tab">
-                            <div role="tabpanel" class="tab-pane active" id="popular">
-                                <ul>
-                                    @foreach($newses as $news)
-                                        <li class="item-wrap">
-                                            <div class="item">
-                                                <div class="item-image">
-                                                    <a href="details.html"><img src="images/news/front/{{ $news->image2 }}" alt="" class="img-responsive"></a>
-                                                </div>
-                                                <div class="item-description">
-                                                    <div class="item-meta">
-                                                        <div class="item-post-date">
-                                                            <span>{{ $news->created_at->diffForHumans() }}</span>
-                                                        </div>
-                                                        <ul class="list-inline product-social">
-                                                            <li><a href="#"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="item-title">
-                                                        <h3><a href="{{ route('news',$news->slug) }}"><b>{{ $news->title }}</b></a></h3>
-                                                    </div>
-                                                    <div class="item-info">
-                                                        <p>{{ $news->subtitle }}</p>
-                                                    </div>
-                                                </div><!-- item-description -->
-                                            </div><!-- item -->
-                                        </li><!-- item-wrap -->
-                                    @endforeach
-                                </ul>
-                                <div class="pager-section">
-                                    <ul class="pagination">
-                                        <li class="next">{{ $newses->links() }}<a href="#"></a></li>
-                                    </ul>
-                                </div><!-- pager-section -->
-                            </div> <!--tab-pane-->
-                            {{-- <div role="tabpanel" class="tab-pane" id="recent">
+                            <div role="tabpanel" class="tab-pane active" id="recent">
                                 <ul>
                                     @foreach($newsrecents as $newsrecent)
-                                        <li class="item-wrap">
-                                            <div class="item">
-                                                <div class="item-image">
-                                                    <a href="details.html"><img src="images/news/front/{{ $news->image2 }}" alt="" class="img-responsive"></a>
+                                    <li class="item-wrap">
+                                        <div class="item">
+                                            <div class="item-image">
+                                                <a href="{{ route('news',$newsrecent->slug) }}"><img src="{{  asset('images/news/front/').'/'.$newsrecent->image2 }}" alt="" class="img-responsive"></a>
+                                            </div>
+                                            <div class="item-description">
+                                                <div class="item-meta">
+                                                    <div class="item-post-date">
+                                                            <span>{{ $newsrecent->created_at->diffForHumans() }}</span>
+                                                            {{-- {{ date('M j,Y',strtotime($post->created_at))}} --}}
+                                                    </div>
                                                 </div>
-                                                <div class="item-description">
-                                                    <div class="item-meta">
-                                                        <div class="item-post-date">
-                                                                <span>{{ $newsrecent->created_at->diffForHumans() }}</span>
-                                                        </div>
-                                                        <ul class="list-inline product-social">
-                                                            <li><a href="#"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="item-title">
-                                                        <h3><a href="{{ route('news',$newsrecent->slug) }}"><b>{{ $newsrecent->title }}</b></a></h3>
-                                                    </div>
-                                                    <div class="item-info">
-                                                        <p>{{ $newsrecent->subtitle }}</p>
-                                                    </div>
-                                                </div><!-- item-description -->
-                                            </div><!-- item -->
-                                        </li><!-- item-wrap -->
+                                                <div class="item-title">
+                                                    <h3><a href="{{ route('news',$newsrecent->slug) }}"><b>{{ str_limit(strip_tags($newsrecent->title), 35) }}</b></a></h3>
+                                                </div>
+                                                <div class="item-info">
+                                                    <p>{{ str_limit(strip_tags($newsrecent->subtitle), 35) }}</p>
+                                                </div>
+                                            </div><!-- item-description -->
+                                        </div><!-- item -->
+                                    </li><!-- item-wrap -->
                                     @endforeach
                                 </ul>
-                                <div class="pager-section">
-                                    <ul class="pagination">
-                                        <li class="next">{{ $newsrecents->links() }}<a href="#"></a></li>
-                                    </ul>
-                                </div><!-- pager-section -->
-                            </div><!-- tab-pane -->		 --}}
+                            </div><!-- tab-pane -->		
                         </div>
                     </div>
-                </div><!-- category-tab-->	
+                </div><!-- category-tab-->
             </div>
+            <div class="pager-section">
+                <ul class="pagination">
+                    <li class="next">{{ $newsrecents->links() }}</li>
+                </ul>
+            </div><!-- pager-section -->
         </div>
     </div><!-- category-tab-->
 </div><!-- .home-page -->

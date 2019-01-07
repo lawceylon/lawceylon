@@ -199,7 +199,7 @@ class UserController extends Controller
         
     public function vedioChat()
     {
-        return view('user.app');
+        return view('user.vedio');
     }
     public function authenticate(Request $request)
     {

@@ -48,7 +48,7 @@ Route::group(['namespace' => 'User' ,'middleware' => ['user']], function() {
 
     Route::get('/user', 'UserController@index')->name('user');
     Route::get('/user/paypal', 'UserController@payment')->name('paypal');
-    Route::get('/user/vedio', 'UserController@vedioChat')->name('vedio');
+    Route::get('/user/vedio', 'UserController@vedioChat')->name('userVedio');
     Route::get('/user/paypal/express-checkout', 'PaypalController@expressCheckout')->name('paypal.express-checkout');
     Route::get('/user/paypal/express-checkout-success', 'PaypalController@expressCheckoutSuccess');
     Route::post('/user/paypal/notify', 'PaypalController@notify');
@@ -90,6 +90,7 @@ Route::group(['namespace' => 'Admin' ,'middleware' => ['admin']], function() {
 Route::group(['namespace' => 'Lawyer' ,'middleware' => ['lawyer']], function() {
 
     Route::get('/lawyer','LawyerController@index')->name('lawyer');
+    Route::get('/lawyer/vedio', 'LawyerController@vedioChat')->name('lawyerVedio');
     Route::post('/storeImage','LawyerController@store');
     Route::get('/editProfile','LawyerController@editLawyerView')->name('editLawyerProfile');
     Route::post('/editSave','LawyerController@editLawyerSave');
