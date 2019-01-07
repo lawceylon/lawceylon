@@ -68,7 +68,7 @@ class UnregisterController extends Controller
                 'updated_at'=>Carbon::now()
             )
         );
-
+        $data = array('name'=>"Lawceylon");
         Mail::send(['text'=>'mail'], $data, function($message) {
             $message->to($lawyer->Email, 'Tutorials Point')->subject
                ('Laravel Basic Testing Mail');
