@@ -11,7 +11,7 @@
                     <div class="col-sm-6 col-md-3">
                         <div class="category-avt">
                             <div class="category-icon">
-                                <a href="#"><img src="images/icon/7.png" alt="images" class="img-responsive"><span class="glyphicon glyphicon-download-alt">Download Here</span></a>
+                                <a href="{{ asset('gassettes/').'/'.$gassette->file }} }}"><img src="images/icon/7.png" alt="images" class="img-responsive"><span class="glyphicon glyphicon-download-alt">Download Here</span></a>
                             </div>
                             {{-- <embed src="/gassettes/GazetteS19-01-04.pdf" width="250px" height="250px" /> --}}
                             {{-- <h5><a href="/gassettes/GazetteS19-01-04.pdf" download></a></h5> --}}
