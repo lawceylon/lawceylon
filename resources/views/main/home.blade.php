@@ -175,7 +175,7 @@
                     <li>
                         <div class="ch-item" style="background-image: url(images/lawyer/{{ $lawyer->image }})">
                             <div class="ch-info">
-                                <p><a href="http://drbl.in/eOPF">{{ $lawyer->firstName }} {{ $lawyer->lastName }}</a>specialist on {{ $lawyer->Specialist_Area }}</p>
+                                <p><a href="{{ route('lawyerViewUser',$lawyer->id) }}">{{ $lawyer->firstName }} {{ $lawyer->lastName }}</a>specialist on {{ $lawyer->Specialist_Area }}</p>
                             </div>
                         </div>
                     </li>

@@ -233,6 +233,8 @@ return [
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
         //Carbon
         'Carbon' => 'Carbon\Carbon',
+        //Input
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

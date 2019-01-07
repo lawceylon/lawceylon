@@ -12,6 +12,7 @@
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+import Echo from "laravel-echo"
 require('./bootstrap');
 
 window.Vue = require('vue');

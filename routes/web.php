@@ -31,6 +31,8 @@ Route::group(['namespace' => 'Page'],function(){
     Route::get('/conversation/{id}','PageController@getMessagesFor');
     Route::get('/conversation/send','PageController@send');
     Route::get('/vediochat','PageController@vediochat')->name('vediochat');
+    Route::get('/gassette','PageController@gassette')->name('gassette');
+    Route::get('/gassetteView/{id}','PageController@gassetteView')->name('gassetteView');
     
 });
 
@@ -80,6 +82,7 @@ Route::group(['namespace' => 'Admin' ,'middleware' => ['admin']], function() {
     Route::resource('admin/lawyerMessages','Message\LawyerMessagesController');
     Route::resource('admin/userMessages','Message\UserMessagesController');
     Route::resource('admin/clientMessages','Message\ClientMessagesController');
+    Route::resource('admin/gassettes','GassetteController');
     // Route::get('admin/charts', 'ChartController@index');
 
 });

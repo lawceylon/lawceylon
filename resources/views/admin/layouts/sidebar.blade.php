@@ -81,6 +81,7 @@
                 <li><a href="{{ route('clientMessages.index') }}"><i class="fa fa-circle-o"></i>From Unregistered Users</a></li>
             </ul>
         </li>
+        <li><a href="{{ route('gassettes.index') }}"><i class="fa fa-circle-o"></i>Gassettes</a></li>
     </section>
     <!-- /.sidebar -->
 </aside>
