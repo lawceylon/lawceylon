@@ -90,7 +90,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('downloads')}}">Download Forms</a></li>
                                 <li><a href="{{route('mapsearch')}}">Advanced MapSearch</a></li>
-                                <li><a href="{{route('chat')}}">Chat</a></li>
+                                <li><a href="{{route('gassette')}}">Gassettes</a></li>
                                 <li><a href="{{route('vediochat')}}">Vedio Chat</a></li>
                             </ul>
                         </li>
