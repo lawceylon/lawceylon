@@ -4,8 +4,9 @@
 @section('content')
 <div class="container" >
     <div class="col-md-3"></div>
+    <div class="row"><img src="{{  asset('images/backgrounds/aboutUsimage.jpg')}}" alt="smiling people" ></div>
     <div class="col-md-7">
-        <img src="{{  asset('images/backgrounds/aboutUsimage.jpg')}}" alt="smiling people" >
+        {{-- <img src="{{  asset('images/backgrounds/aboutUsimage.jpg')}}" alt="smiling people" > --}}
         <h2><strong>Helping 20 Million People. <br>Just like you.</strong></h2>
         <br>
 

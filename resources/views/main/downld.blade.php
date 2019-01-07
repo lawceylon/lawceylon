@@ -17,6 +17,13 @@
 </style>
 @endsection
 @section('content')
+<div id="breadcrumb-section" class="section">
+    <div class="container">
+        <div class="page-title text-center">
+            <h1>Download Forms</h1>
+        </div>
+    </div>
+</div><!-- breadcrumb-section -->
 
 <?php $formNamesa=array("Advanced Level Application","Ordinary Level Application","SSC MTS Application","Diploma for Artificer Apprentices","Pearson BTEC Level 5 HND ","Open Competitive Examination Form","Open Competitive Examination ","Open Competitive Examination "); ?>
 <?php $formDescriptiona=array("A/L Application Form for Private Applicant","O/L Application Form for Private Applicant","SSC MTS Application Form 2018","Diploma for Artificer Apprentices 2019 – Sri Lanka Navy","Pearson BTEC Level 5 HND 2018","Open Competitive Examination 2018","Open Competitive Examination ","Open Competitive Examination ",""); ?>
@@ -40,7 +47,6 @@
         <div class="section services">
             <div class="section-title">
                 <div class="title-content">
-                    <h2>Download Forms</h2>
                     <p>You can download all your law related forms from one place</p>
                 </div>
             </div>

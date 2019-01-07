@@ -230,7 +230,7 @@
                                     </ul>
                                 </div><!-- pager-section -->
                             </div> <!--tab-pane-->
-                            <div role="tabpanel" class="tab-pane" id="recent">
+                            {{-- <div role="tabpanel" class="tab-pane" id="recent">
                                 <ul>
                                     @foreach($newsrecents as $newsrecent)
                                         <li class="item-wrap">
@@ -264,7 +264,7 @@
                                         <li class="next">{{ $newsrecents->links() }}<a href="#"></a></li>
                                     </ul>
                                 </div><!-- pager-section -->
-                            </div><!-- tab-pane -->		
+                            </div><!-- tab-pane -->		 --}}
                         </div>
                     </div>
                 </div><!-- category-tab-->	

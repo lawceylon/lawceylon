@@ -20,7 +20,7 @@
             overflow-x: hidden;
             margin-left:0px;
             display: table-cell;
-            background-color :#20B2AA;
+            background-color :#808080;
         }
     
         .d{
@@ -49,7 +49,7 @@
             color:#000000;
         }
         .button1{
-            background-color: #00A86B ; 
+            /* background-color: #00A86B ;  */
             border:  1px solid #00A86B;
             color: black;
             padding: 7px;
@@ -63,7 +63,7 @@
             border-radius: 25px; 
         }   
         .searchButton{
-            background-color: #00A86B ; 
+            /* background-color: #00A86B ;  */
             border:  1px solid #00A86B;
             color: black;
             padding: 7px;
@@ -77,7 +77,7 @@
             border-radius: 25px;
         }
         .dropbtn{
-            background-color: #00A86B;
+            /* background-color: #00A86B; */
             padding: 6px;
             font-size: 17px;
             border: none;
@@ -88,6 +88,13 @@
     </style>   
 @endsection
 @section('content')
+    <div id="breadcrumb-section" class="section">
+        <div class="container">
+            <div class="page-title text-center">
+                <h1>Search Chambers</h1>
+            </div>
+        </div>
+    </div><!-- breadcrumb-section -->
    <br>
     <script type="text/javascript">
         $(document).ready(function(){

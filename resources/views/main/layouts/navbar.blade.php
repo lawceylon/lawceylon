@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <ul class="list-inline">
-                            <li><span><i class="fa fa-envelope-o"></i></span> <a href="lawceylon@gmail.com"> lawceylon@gmail.com</a></li>
+                            <li><span><i class="fa fa-envelope-o"></i></span> <a href="mailto:lawceylon@gmail.com"> lawceylon@gmail.com</a></li>
                             <li><ul class="list-inline top-social">
                                     <li><a class="facebook" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-facebook"></i></a></li>
                                     <li><a class="twitter" href="https://www.facebook.com/Law-Ceylon-1050483865124118/?modal=media_composer"><i class="fa fa-twitter"></i></a></li>
@@ -96,6 +96,7 @@
                         </li>
                         <li><a href="{{route('tutorial')}}">Tutorial</a></li>
                         <li><a href="{{route('laws')}}">Law Reference</a></li>
+                        <li><a href="{{route('aboutUs')}}">About Us</a></li>
                         <li><a href="{{route('contactus')}}">Contact Us</a></li>
                     </ul>
                 </div>

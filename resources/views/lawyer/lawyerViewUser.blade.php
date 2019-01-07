@@ -86,7 +86,7 @@
                 <div id="advanced-filter">
                     <div class="filter-heading">
                         <a data-toggle="collapse" data-parent="#advanced-filter" href="#advanced">
-                            <h4 class="list-title">Create An Appointment<span class="pull-right"><i class="fa fa-plus"></i></span></h4>
+                            <h4 class="list-title">Create an Appointment<span class="pull-right"><i class="fa fa-plus"></i></span></h4>
                         </a>
                     </div><!-- filter-heading -->
                     <div id="advanced" class="panel-collapse collapse">
