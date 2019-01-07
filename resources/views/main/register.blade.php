@@ -237,8 +237,15 @@
                                     </div>
                                 </form>
                                 <form id="register-form" action="{{ route('reglawyer.store') }}" method="post" role="form" style="display: none;" enctype="multipart/form-data">
-                                    <div class="palert palert-info" style="color:#0E145E">
+                                    <div class="palert palert-info" style="color:#002700">
                                         @if(session()->has('message'))
+                                            <script>
+                                                $('#register-form').addClass('active');
+                                                $("#register-form").delay(100).fadeIn(100);
+                                                $("#user-form").fadeOut(100);
+                                                $('#user-form-link').removeClass('active');
+                                                $('#register-form-link').addClass('active');
+                                            </script>
                                             {{ session()->get('message') }}
                                         @endif
                                     </div>

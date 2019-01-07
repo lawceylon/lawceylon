@@ -107,7 +107,7 @@ legend {
 /*alert frame and alert color*/
 .palert {
     padding: 20px;
-    background-color: #D2B48C;
+    background-color: #FFFF;
     color: white;
     opacity: 1;
     transition: opacity 0.6s;

@@ -5,6 +5,16 @@
 @section('content')
 {{-- @foreach ($gassettes as $gassette) --}}
     <div class="home-page">
+        <div id="breadcrumb-section" class="section">
+            <div class="container">
+                <div class="page-title text-center">
+                    <h1>Refer or Download Gazzets</h1>
+                </div>
+            </div>
+        </div><!-- breadcrumb-section -->
+        <br>
+        <br>
+        <br>
         <div id="avt-category" class="clearfix">
             <form role="form">
                 <div class="box-body">

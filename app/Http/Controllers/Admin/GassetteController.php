@@ -126,6 +126,7 @@ class GassetteController extends Controller
     public function destroy($id)
     {
         Gassette::where('id',$id)->delete();
-        return redirect()->back();
+        return view('admin.unregister');
+        // return redirect()->back();
     }
 }

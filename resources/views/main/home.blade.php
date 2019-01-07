@@ -166,7 +166,7 @@
     <div id="avt-category" class="clearfix" style="padding-bottom:100px; padding-top:40px;">
         <div class="section-title">
             <div class="title-content">
-                <h2>Meet Our Lawyers</h2>
+                <h2>Meet Our top Rated Lawyers</h2>
             </div>
         </div>
         <div class="row">
