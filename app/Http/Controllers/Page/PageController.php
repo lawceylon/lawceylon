@@ -27,10 +27,9 @@ class PageController extends Controller
         $lawyers = $lawyr->whereHas('ratings', function($query) {
             $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc');
         })->take(10)->get();
-        $categories = categories::all();
+        $categories = lawcategories::all();
         $newsrecents = news::orderBy('created_at','DESC')->paginate(8);
-        $newschoices = news::where('status',1)->orderBy('created_at','DESC')->paginate(8);
-        return view('main.home',compact('newschoices','newsrecents','categories','lawyers'));
+        return view('main.home',compact('newsrecents','categories','lawyers'));
     }
 
     public function laws()

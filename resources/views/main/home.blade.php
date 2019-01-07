@@ -191,7 +191,7 @@
                     <h2>Our Expertise Areas</h2>
                     <ul style="padding-left:150px;">
                         @foreach($categories as $category)
-                            <li><h2><strong><a href="{{ route('categories',$category->slug) }}"> <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i>{{ $category->name }}</a></strong></h2></li>
+                            <li><h2><strong><a href="{{ route('lawcategories',$category->slug) }}"> <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i>{{ $category->name }}</a></strong></h2></li>
                         @endforeach
                     </ul>
                 </div>
