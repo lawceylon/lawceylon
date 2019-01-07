@@ -12,6 +12,7 @@ use App\Model\User\news;
 use App\Model\User\like;
 use App\Model\User\categories;
 use App\Model\User\tags;
+use App\Model\User\Gassette;
 use App\Model\Lawyer\Lawyer;
 use Illuminate\Support\Facades\DB;
 use App\Model\Admin\contactUs;
@@ -24,7 +25,7 @@ class PageController extends Controller
     {
         $lawyr = Lawyer::where('checked', 1 );
         $lawyers = $lawyr->whereHas('ratings', function($query) {
-            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc')->limit(8);
+            $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc');
         })->take(8)->get();
         $categories = categories::all();
         $newsrecents = news::orderBy('created_at','DESC')->paginate(8);
@@ -173,4 +174,17 @@ class PageController extends Controller
         ]);
         return response()->json($message);
     }
+
+    public function gassette()
+    {
+        $gassettes = Gassette::orderBy('created_at','DESC')->paginate(12);
+        return view('main.gassette',compact('gassettes'));
+    }
+
+    public function gassetteView($id)
+    {
+        $gassette = Gassette::where('id',$id)->first();
+        return view('main.gassetteView',compact('gassette'));
+    }
+
 }

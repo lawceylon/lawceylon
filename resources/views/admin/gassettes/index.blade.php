@@ -10,7 +10,8 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Messages From Users</h3>
+        <h3 class="box-title">Gassettes</h3>
+        <a class="col-md-offset-4 float-right btn btn-success" href="{{ route('gassettes.create') }}">Add New</a>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
         </div>
@@ -22,36 +23,34 @@
               <thead>
                 <tr>
                   <th>S.No</th>
-                  <th>User ID</th>
-                  <th>User Name</th>
-                  <th>Email</th>
-                  <th>Message</th>
-                  <th>Send Date</th>
-                  <th>Send Time</th>
+                  <th>Gassette Name</th>
+                  <th>Gassette Subject</th>
+                  <th>Upload Date</th>
+                  <th>Upload Time</th>
                   <th>View</th>
+                  <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($umessages as $umessage)
+                @foreach($gassettes as $gassette)
                   <tr>
                       <td>{{$loop->index+1}}</td>
-                      <td>{{ $umessage->c_id }}</td>
-                      <td>{{ $umessage->c_name }}</td>
-                      <td>{{ $umessage->email }}</td>
-                      <td>{{ $umessage->message }}</td>
-                      <td>{{ date('M j,Y',strtotime($umessage->created_at)) }}</td>
-                      <td>{{ date('H:i:s',strtotime($umessage->created_at)) }}</td>
-                      <td><a class="col-md-offset-4 float-right btn btn-success" href="{{ route('userMessages.show',$umessage->m_id) }}">View</a></td>
+                      <td>{{ $gassette->name }}</td>
+                      <td>{{ $gassette->subject }}</td>
+                      <td>{{ date('M j,Y',strtotime($gassette->created_at)) }}</td>
+                      <td>{{ date('H:i:s',strtotime($gassette->created_at)) }}</td>
+                      <td><a class="col-md-offset-4 float-right btn btn-success" href="{{ route('gassettes.show',$gassette->id) }}">View</a></td>
+                      <td><a href="{{ route('gassettes.edit',$gassette->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                       <td>
-                          <form method="post"id="delete-form-{{ $umessage->m_id }}" action="{{ route('userMessages.destroy',$umessage->m_id) }}" style="dispaly: none">
+                          <form method="post"id="delete-form-{{ $gassette->id }}" action="{{ route('gassettes.destroy',$gassette->id) }}" style="dispaly: none">
                               {{ csrf_field()}}
                               {{ method_field('DELETE') }}
                           </form>
                           <a href="" onclick=" 
                               if(confirm('Are You Sure,You want to Delete this ?'))
                               {
-                                  event.preventDefault();document.getElementById('delete-form-{{ $umessage->m_id }}').submit();
+                                  event.preventDefault();document.getElementById('delete-form-{{ $gassette->id }}').submit();
                               }
                               else
                               {
@@ -65,13 +64,12 @@
               <tfoot>
                 <tr>
                     <th>S.No</th>
-                    <th>User ID</th>
-                    <th>User Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th>Send Date</th>
-                    <th>Send Time</th>
+                    <th>Gassette Name</th>
+                    <th>Gassette Subject</th>
+                    <th>Upload Date</th>
+                    <th>Upload Time</th>
                     <th>View</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
               </tfoot>
