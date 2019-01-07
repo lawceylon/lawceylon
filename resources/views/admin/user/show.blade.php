@@ -42,6 +42,7 @@
                       <td>{{ $user->lastname }}</td>
                       <td>{{ $user->phone }}</td>
                       <td>{{ $user->address }}</td>
+                      <td>{{ $user->nic }}</td>
                       <td>{{ $user->email }}</td>
                       <td><a href="{{ route('user.edit',$user->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                       <td>

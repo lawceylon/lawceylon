@@ -8,6 +8,7 @@ use App\Model\Lawyer\Lawyer;
 use App\User;
 use DB;
 use Carbon\Carbon;
+use Mail;
 
 class UnregisterController extends Controller
 {
