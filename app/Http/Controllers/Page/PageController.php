@@ -26,7 +26,7 @@ class PageController extends Controller
         $lawyr = Lawyer::where('checked', 1 );
         $lawyers = $lawyr->whereHas('ratings', function($query) {
             $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc');
-        })->take(8)->get();
+        })->take(10)->get();
         $categories = categories::all();
         $newsrecents = news::orderBy('created_at','DESC')->paginate(8);
         $newschoices = news::where('status',1)->orderBy('created_at','DESC')->paginate(8);
