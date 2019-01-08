@@ -105,7 +105,7 @@
                 <thead>
                     <tr>
                         <th><h3>Time :-</h3></th>
-                        <th><h3>{{  date('M j,Y',strtotime(Carbon\Carbon::now())) }}</h3></th>
+                        <th><h3>{{  date('H:i:s',strtotime(Carbon\Carbon::now())) }}</h3></th>
                     </tr>
                 </thead>
             </table>
