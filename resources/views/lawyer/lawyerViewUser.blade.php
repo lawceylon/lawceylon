@@ -27,8 +27,8 @@
         </div>       
         <center>
             <br>
-            <a href="{{ route('lawyerVedio') }}"><span id="icon2"   class="fa fa-video-camera" style="font-size:35px;color:black;padding-right:25px"></span></a> &nbsp&nbsp&nbsp&nbsp         
-            <a href="#"><span id="icon3"  class="fa fa-phone"  style="font-size:35px;color:black;padding-right:25px"></span></a>            
+            <a href="{{ route('paypal') }}"><span id="icon2"   class="fa fa-video-camera" style="font-size:35px;color:black;padding-right:25px"></span></a> &nbsp&nbsp&nbsp&nbsp         
+            <a href="{{ route('lawyerVedio') }}"><span id="icon3"  class="fa fa-phone"  style="font-size:35px;color:black;padding-right:25px"></span></a>            
             <a href="#"><span id="icon4"  class="fa fa-comments" style="font-size:35px;color:black;padding-right:25px"></span></a> 
         </center>
         <br>

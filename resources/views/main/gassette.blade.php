@@ -12,26 +12,28 @@
             </div>
         </div><!-- breadcrumb-section -->
         <div id="avt-category" class="clearfix">
-            <div class="row">
-                @foreach ($gassettes as $gassette)
-                    <div class="col-sm-6 col-md-3">
-                        <div class="category-avt">
-                            <div class="category-icon">
-                                <a href="{{ asset('gassettes/').'/'.$gassette->file }}" download><img src="images/icon/7.png" alt="images" class="img-responsive"><span class="glyphicon glyphicon-download-alt">Download Here</span></a>
-                            </div>
-                            <ul>
-                                <li>{{ $gassette->name }}</li>
-                                <li>{{ $gassette->subject }}</li>
-                                <li><a class="btn btn-info" href="{{ route('gassetteView',$gassette->id) }}">View Here</a></li>
-                            </ul>
-                        </div><!-- category-avt -->	
-                    </div>
-                @endforeach
-                <div class="pager-section">
-                    <ul class="pagination">
-                        <li class="next">{{ $gassettes->links() }}</li>
-                    </ul>
-                </div><!-- pager-section -->
+            <div class="container">
+                <div class="row">
+                    @foreach ($gassettes as $gassette)
+                        <div class="col-sm-6 col-md-3">
+                            <div class="category-avt">
+                                <div class="category-icon">
+                                    <a href="{{ asset('gassettes/').'/'.$gassette->file }}" download><img src="images/icon/7.png" alt="images" class="img-responsive"><span class="glyphicon glyphicon-download-alt">Download Here</span></a>
+                                </div>
+                                <ul>
+                                    <li>{{ $gassette->name }}</li>
+                                    <li>{{ $gassette->subject }}</li>
+                                    <li><a class="btn btn-info" href="{{ route('gassetteView',$gassette->id) }}">View Here</a></li>
+                                </ul>
+                            </div><!-- category-avt -->	
+                        </div>
+                    @endforeach
+                    <div class="pager-section">
+                        <ul class="pagination">
+                            <li class="next">{{ $gassettes->links() }}</li>
+                        </ul>
+                    </div><!-- pager-section -->
+                </div>
             </div>
         </div>
     </div>

@@ -5,7 +5,7 @@
     <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 @endsection
 @section('content')
-    <div class="home-page">
+    <div class="container">
         <div id="videos">
             <div id="subscriber"></div>
             <div id="publisher"></div>
