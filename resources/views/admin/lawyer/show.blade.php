@@ -20,7 +20,7 @@
       <div class="box-body">
         <div class="box">
           <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="example1" class="table table-bordered table-striped table-responsive">
               <thead>
                 <tr>
                   <th>S.No</th>
@@ -37,6 +37,8 @@
                   <th>Phone</th>
                   {{-- <th>Biography</th> --}}
                   <th>Consultation Fee</th>
+                  <th>Show Rejected</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -94,6 +96,8 @@
                   <th>Phone</th>
                   {{-- <th>Biography</th> --}}
                   <th>Consultation Fee</th>
+                  <th>Show Rejected</th>
+                  <th>Delete</th>
                 </tr>
               </tfoot>
             </table>

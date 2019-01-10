@@ -17,7 +17,10 @@ class LawyController extends Controller
      */
     public function index()
     {
-        $lawyers = Lawyer::where('checked', 1)->get();//fetch all the registered lawyers in the system
+        $lawyers = Lawyer::all();
+        // $lawyers1 = Lawyer::where('checked', 1)->get();
+        // $lawyers2 = Lawyer::where('checked', 1)->get();//fetch all the registered lawyers in the system
+        // $lawyers = $lawyers->union($lawyers1)->union($lawyers2);
         return view('admin.lawyer.show',compact('lawyers'));//see them in a table
     }
 
