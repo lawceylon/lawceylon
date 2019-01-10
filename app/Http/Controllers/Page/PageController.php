@@ -26,36 +26,36 @@ class PageController extends Controller
         $lawyr = Lawyer::where('checked', 1 );
         $lawyers = $lawyr->whereHas('ratings', function($query) {
             $query->selectRaw('AVG(rating) rt, rateable_id')->groupBy('rateable_id')->orderBy('rt','desc');
-        })->take(10)->get();
-        $categories = lawcategories::all();
-        $newsrecents = news::orderBy('created_at','DESC')->paginate(8);
-        return view('main.home',compact('newsrecents','categories','lawyers'));
+        })->take(10)->get();//fetch top rated lawyers from database to show in homepage
+        $categories = lawcategories::all();//fetch law categories to them in home page
+        $newsrecents = news::orderBy('created_at','DESC')->paginate(8);//show all laws in the front end as 8 laws in one page
+        return view('main.home',compact('newsrecents','categories','lawyers'));//bind all the variables to home page
     }
 
     public function laws()
     {
-        $laws = laws::orderBy('created_at','DESC')->paginate(8);
+        $laws = laws::orderBy('created_at','DESC')->paginate(8);//show all laws in the front end as 8 laws in one page
         $lawcategories = lawcategories::all();
         $lawtags = lawtags::all();
         return view('main.staticlaws',compact('laws','lawtags','lawcategories'));
     }
 
-    public function news(news $news)
+    public function news(news $news)//render the relevant news to the front end
     {
-        $recents = news::orderBy('updated_at','desc')->limit(5)->get();
+        $recents = news::orderBy('updated_at','desc')->limit(5)->get();//to show recent news on the side bar
         $categories = categories::all();
         $tags = tags::all();
         return view('main.newspage',compact('news','categories','tags','recents'));
     }
 
-    public function lawcontent(laws $laws)
+    public function lawcontent(laws $laws)//render the relevant law to the front end
     {
         $lawcategories = lawcategories::all();
         $lawtags = lawtags::all();
         return view('main.lawpage',compact('laws','lawtags','lawcategories'));
     }
 
-    public function tag(tags $tags)
+    public function tag(tags $tags)//render all the news with same tags to the front end
     {
         $category = categories::all();
         $tag = tags::all();
@@ -63,7 +63,7 @@ class PageController extends Controller
         return view('main.cattags',compact('news','category','tag'));
     }
 
-    public function category(categories $categories)
+    public function category(categories $categories)//render all the news with same category to the front end
     {
         $category = categories::all();
         $tag = tags::all();
@@ -71,7 +71,7 @@ class PageController extends Controller
         return view('main.cattags',compact('news','category','tag'));
     }
 
-    public function lawtag(lawtags $lawtgs)
+    public function lawtag(lawtags $lawtgs)//render all the laws with same tags to the front end
     {
         $lawcategories = lawcategories::all();
         $lawtags = lawtags::all();
@@ -79,7 +79,7 @@ class PageController extends Controller
         return view('main.lawcattags',compact('laws','lawcategories','lawtags'));
     }
 
-    public function lawcategory(lawcategories $lawcategry)
+    public function lawcategory(lawcategories $lawcategry)//render all the laws with same category to the front end
     {
         $lawcategories = lawcategories::all();
         $lawtags = lawtags::all();
@@ -89,43 +89,43 @@ class PageController extends Controller
 
     public function lawsearch(Request $request)
     {
-        $lawcategories = lawcategories::all();
-        $lawtags = lawtags::all();
-        $laws = laws::lawsearch($request->keyword);
-        return view('main.lawcattags',compact('laws','lawcategories','lawtags'));
+        $lawcategories = lawcategories::all();//get all law categories to pass to the blade
+        $lawtags = lawtags::all();//get all lawtags to pass to the blade
+        $laws = laws::lawsearch($request->keyword);//call to the lawsearch function in laws model with keyword in the request
+        return view('main.lawcattags',compact('laws','lawcategories','lawtags'));//bind all the variables with blade
     }
 
     public function newsearch(Request $request)
     {
-        $category = categories::all();
-        $tag = tags::all();
-        $news = news::newsearch($request->keyword);
-        return view('main.cattags',compact('news','category','tag'));
+        $category = categories::all();//get all news categories to pass to the blade
+        $tag = tags::all();//get all news tags to pass to the blade(here tags means sub categories)
+        $news = news::newsearch($request->keyword);//call to the newsearch function in news model with keyword in the request
+        return view('main.cattags',compact('news','category','tag'));//bind all the variables with blade
     }
 
-    public static function getLawyers()
+    public static function getLawyers()//render search page
     {
     	$lawyers = DB::table('lawyers')->where('checked',1)->get();
         return view('main.search',['lawyers'=>$lawyers]);
     
     }
 
-    public static function reg()
+    public static function reg()//render register page
     {
         return view('main.register');
     
     }
 
-    public function contactUs(){
+    public function contactUs(){//render contact us page
         return view('main.contactus');
     }
 
-    public static function getaboutUs()
+    public static function getaboutUs()//render about us page
     {
         return view('main.aboutUs');
     }
     
-    public function contactUsSave(Request $request){
+    public function contactUsSave(Request $request){//contact us page form details are saved from here
         $name=$request->get('name');
         $email=$request->get('email');
         $subject=$request->get('subject');
@@ -135,12 +135,12 @@ class PageController extends Controller
         return redirect()->back()->with('message','your message has been sent.....');
     }
 
-    public static function getdownloads()
+    public static function getdownloads()//function for render the form download page
     {
         return view('main.downld');
     }
 
-    public function get()
+    public function get()//function for chat messages not finished yet
     {
         $lawyr = Lawyer::where('checked', 1 );
         $contacts = $lawyr->whereHas('ratings', function($query) {
@@ -149,22 +149,22 @@ class PageController extends Controller
         return response()->json($contacts);
     }
 
-    public function chat()
+    public function chat()//function for chat messages not finished yet
     {
         return view('main.chat');
     }
-    public function vediochat()
+    public function vediochat()//function for vedio chat not finished yet
     {
         return view('main.vediochat');
     }
 
-    public function getMessagesFor($id)
+    public function getMessagesFor($id)//function for chat messages not finished yet
     {
         $messages = message::where('from',$id)->orWhere('to',$id)->get();
         return response()->json($messages);
     }
 
-    public function send(Request $request)
+    public function send(Request $request)//function for chat messages not finished yet
     {
         $message = message::create([
             'from' => auth()->id(),
@@ -176,14 +176,14 @@ class PageController extends Controller
 
     public function gassette()
     {
-        $gassettes = Gassette::orderBy('created_at','DESC')->paginate(12);
+        $gassettes = Gassette::orderBy('created_at','DESC')->paginate(12);//gazzetes render to a page as the newly created on is first and 12 gazzetes per one page
         return view('main.gassette',compact('gassettes'));
     }
 
-    public function gassetteView($id)
+    public function gassetteView($id)//pass the gazzetes' id as the parameter to the function
     {
-        $gassette = Gassette::where('id',$id)->first();
-        return view('main.gassetteView',compact('gassette'));
+        $gassette = Gassette::where('id',$id)->first();//fetch the relevant gazzete from database and return it to the blade
+        return view('main.gassetteView',compact('gassette'));//render the blade file to see the gazzete in detail
     }
 
 }

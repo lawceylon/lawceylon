@@ -41,7 +41,7 @@
 					<div class="sidebar">
 						<div class="widget search-widget">
 							<div class="widget-content">
-								<form role="search" id="search-form" method="get" action="#">
+								<form role="search" id="search-form" method="get" action="{{ route('lawsearch') }}">
 									<input type="search" autocomplete="off" name="search" placeholder="Search..." id="search-input" value="">
 									<button type="submit" id="search-submit" class="btn"><i class="fa fa-search"></i></button>
 								</form>

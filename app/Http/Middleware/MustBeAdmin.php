@@ -19,10 +19,10 @@ class MustBeAdmin
     { 
         if($request->user() && $request->user()->isAdmin())
         {
-            return $next($request);
+            return $next($request);//if authenticated process request
 
         }else{
-            return redirect('/');
+            return redirect('/');//if not authenticated redirect to homepage
         }
 
     }

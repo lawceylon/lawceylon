@@ -28,7 +28,7 @@
                   <th>Upload Date</th>
                   <th>Upload Time</th>
                   <th>View</th>
-                  <th>Edit</th>
+                  {{-- <th>Edit</th> --}}
                   <th>Delete</th>
                 </tr>
               </thead>

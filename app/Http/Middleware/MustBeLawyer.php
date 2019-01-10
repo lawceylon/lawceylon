@@ -19,10 +19,10 @@ class MustBeLawyer
     {
         if($request->user() && $request->user()->isLawyer())
         {
-            return $next($request);
+            return $next($request);//if authenticated process request
  
         }else{
-            return redirect('/');
+            return redirect('/');//if not authenticated redirect to homepage
         }
     }
 }

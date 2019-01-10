@@ -38,7 +38,7 @@
 										<a href="" style="background-color: #92a8d1; font-size:12px; font-weight:bold; margin-right:5px; border-radius:5px; border:1px solid gray; padding:5px;">{{ $tag->name }}</a>
 									@endforeach
 								</div>
-								{{-- <a class="date" href="#"><span>{{ $news->created_at->format('d') }}</span>{{ $news->created_at->format('M') }}</a> --}}
+								<a class="date" href="#"><span>{{ $news->created_at->format('d') }}</span>{{ $news->created_at->format('M') }}</a>
 							</div>
 							<div class="post-comments">
 								<ul class="comment-list">

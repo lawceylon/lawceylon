@@ -19,8 +19,8 @@ class UnregisterController extends Controller
      */
     public function index()
     {
-        $lawyers = Lawyer::where('checked', 0)->get();
-        return view('admin.unregister.show',compact('lawyers')); 
+        $lawyers = Lawyer::where('checked', 0)->get();//get all the unregistered lawyers in the system(unregistered means system doesnt verify that the account is belongs to true lawyer)
+        return view('admin.unregister.show',compact('lawyers'));//bind all the unregistered lawyers with the blade
     }
 
     /**
@@ -50,16 +50,17 @@ class UnregisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id)//pass the id of unregistered lawyer as input parameter of the function
+    //functions to accept this unnregistered lawyer as registered one in the system
     {
-        $lawyer = Lawyer::where('id',$id)->first();
+        $lawyer = Lawyer::where('id',$id)->first();//fetch all the data of the relevant unregistered lawyer
         $data = array('name'=>$lawyer->firstName);
-        Mail::send(['text'=>'mail'], $data, function($message) use ($lawyer) {
-            $message->to($lawyer->Email, 'Tutorials Point')->subject
-               ('Lawceylon Lawyer Registration Accept Mail');
-            $message->from('dilshanishara73@gmail.com','Lawceylon');
+        Mail::send(['text'=>'mail'], $data, function($message) use ($lawyer) {//mail refers to a blade which stored in the resources->views folder
+            $message->to($lawyer->Email, 'From Lawceylon')->subject
+               ('Lawceylon Lawyer Registration Accept Mail');//mail subject
+            $message->from('dilshanishara73@gmail.com','Lawceylon');//this function triggered when admin accepts as a true lawyer
         });
-        DB::table('users')->insert(
+        DB::table('users')->insert(//insert data to the users table
             array(
                 'honorific'=>$lawyer->honorific,
                 'name' =>$lawyer->firstName,
@@ -68,7 +69,7 @@ class UnregisterController extends Controller
                 'address'=>$lawyer->Address,
                 'nic'=>$lawyer->NIC_passportNumber,
                 'email'=>$lawyer->Email,
-                'role'=>'lawyer',
+                'role'=>'lawyer',//set role as lawyer to all 
                 'password'=>$lawyer->password,
                 'created_at'=>Carbon::now(),
                 'updated_at'=>Carbon::now()
@@ -78,14 +79,14 @@ class UnregisterController extends Controller
         $user = User::where('email',$lawyer->Email)->first();
         $lawyer->checked = 1;
         $lawyer->save();
-        DB::table('userlawyer')->insert(
+        DB::table('userlawyer')->insert(//insert lawyer id and user id to the user_lawyer table to map
             array(
                 'user_id'=>$user->id,
                 'lawyer_id' =>$lawyer->id
             )
         );
         
-        return redirect()->route('lawyer.index');
+        return redirect()->route('lawyer.index');//redirect back to the previous page
     }
 
     /**
@@ -94,10 +95,10 @@ class UnregisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)//pass the id of unregister lawyer as input parameter of the function
     {
-        $lawyer = Lawyer::where('id',$id)->first(); ;
-        return view('admin.unregister.view',compact('lawyer'));
+        $lawyer = Lawyer::where('id',$id)->first();//fetch the relevant lawyer from the database
+        return view('admin.unregister.view',compact('lawyer'));//return data to the view blade
     }
 
     /**
@@ -118,9 +119,9 @@ class UnregisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)//pass the id of unregister lawyer as input parameter of the function
     {
-        Lawyer::where('id',$id)->delete();
-        return redirect()->back();
+        Lawyer::where('id',$id)->delete();//delete the relevant lawyer from the database
+        return redirect()->back();//redirect back to the previous page
     }
 }

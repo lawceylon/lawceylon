@@ -15,8 +15,8 @@ class LawcategoryController extends Controller
      */
     public function index()
     {
-        $lawcategories = lawcategories::all();
-        return view('admin.lawcategory.show',compact('lawcategories'));
+        $lawcategories = lawcategories::all();//fetch all created law categories
+        return view('admin.lawcategory.show',compact('lawcategories'));//bind that categories variable to show blade
     }
 
     /**
@@ -26,7 +26,7 @@ class LawcategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.lawcategory.create');
+        return view('admin.lawcategory.create');//render the create blade 
     }
 
     /**
@@ -37,16 +37,16 @@ class LawcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request,[//validate the data comming from request
             'name' => 'required',
             'slug' => 'required',
         ]);
-        $lawcategory = new lawcategories();
+        $lawcategory = new lawcategories();//create new model lawcategories
         $lawcategory->name = $request->name;
         $lawcategory->slug = $request->slug;
-        $lawcategory->save();
+        $lawcategory->save();//save it  in the database
 
-        return redirect(route('lawcategory.index'));
+        return redirect(route('lawcategory.index'));//redirect back to the previous page
     }
 
     /**
@@ -66,10 +66,17 @@ class LawcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)//pass the id as the parameter to the function
     {
-        $lawcategories = lawcategories::where('id',$id)->first(); ;
-        return view('admin.lawcategory.edit',compact('lawcategories'));
+        // DB::enableQueryLog();
+        // $users = User::all();
+        // dd(DB::getQueryLog());
+        //use this with importing use DB to see the relevant query
+        //validate nic in with v
+        // 'nic'=>'required|regex:/^\d{9}[Vv]$/'
+        //use this to validate nic
+        $lawcategories = lawcategories::where('id',$id)->first();//find the relevant law category by the database
+        return view('admin.lawcategory.edit',compact('lawcategories'));//bind that law category to edit blade
     }
 
     /**
@@ -81,17 +88,17 @@ class LawcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request,[//again validate fields
             'name' => 'required',
             'slug' => 'required',
         ]);
 
-        $lawcategories = lawcategories::find($id);
+        $lawcategories = lawcategories::find($id);//find the relevant law category from database
         $lawcategories->name = $request->name;
         $lawcategories->slug = $request->slug;
-        $lawcategories->save();
+        $lawcategories->save();//assign new values and update it in the database
 
-        return redirect(route('lawcategory.index'));
+        return redirect(route('lawcategory.index'));//redirect back to the previous page
     }
 
     /**
@@ -100,9 +107,9 @@ class LawcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)//pass the id of law category as input parameter of the function
     {
-        lawcategories::where('id',$id)->delete();
-        return redirect()->back();
+        lawcategories::where('id',$id)->delete();//find relevant law cactegory from the database and delete it
+        return redirect()->back();//redirect back to the previous page
     }
 }

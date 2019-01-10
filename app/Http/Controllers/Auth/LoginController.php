@@ -32,12 +32,12 @@ class LoginController extends Controller
     //protected $redirectTo = '/home';
 
     protected function authenticated(){
-        if(Auth::User()->isAdmin()){
+        if(Auth::User()->isAdmin()){//if user is admin then he is redirect to the /admin  route
             return redirect('/admin');
-        }else if(Auth::User()->isLawyer()){
+        }else if(Auth::User()->isLawyer()){//else if user is lawyer then he is redirect to the /lawyer  route
             return redirect('/lawyer');
         }else{
-            return redirect('/user');
+            return redirect('/user');//else user is user then he is redirect to the /user  route
         }
         
     }

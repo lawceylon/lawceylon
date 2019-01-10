@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 
-Route::group(['namespace' => 'User' ,'middleware' => ['user']], function() {
+Route::group(['namespace' => 'User' ,'middleware' => ['user']], function() {//routes for user middleware
 
     Route::get('/user', 'UserController@index')->name('user');
     Route::get('/user/paypal', 'UserController@payment')->name('paypal');
@@ -66,7 +66,7 @@ Route::group(['namespace' => 'User' ,'middleware' => ['user']], function() {
 
 });
 
-Route::group(['namespace' => 'Admin' ,'middleware' => ['admin']], function() {
+Route::group(['namespace' => 'Admin' ,'middleware' => ['admin']], function() {//routes for admin middleware
 
     Route::get('/admin','PageController@index')->name('admin');
     Route::resource('admin/news','NewsController');
@@ -83,11 +83,10 @@ Route::group(['namespace' => 'Admin' ,'middleware' => ['admin']], function() {
     Route::resource('admin/userMessages','Message\UserMessagesController');
     Route::resource('admin/clientMessages','Message\ClientMessagesController');
     Route::resource('admin/gassettes','GassetteController');
-    // Route::get('admin/charts', 'ChartController@index');
 
 });
 
-Route::group(['namespace' => 'Lawyer' ,'middleware' => ['lawyer']], function() {
+Route::group(['namespace' => 'Lawyer' ,'middleware' => ['lawyer']], function() {//routes for lawyer middleware
 
     Route::get('/lawyer','LawyerController@index')->name('lawyer');
     Route::get('/lawyer/vedio', 'LawyerController@vedioChat')->name('lawyerVedio');

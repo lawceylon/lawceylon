@@ -15,8 +15,8 @@ class LawtagController extends Controller
      */
     public function index()
     {
-        $lawtags = lawtags::all();
-        return view('admin.lawtag.show',compact('lawtags'));
+        $lawtags = lawtags::all();//fetch all the lawtags from database
+        return view('admin.lawtag.show',compact('lawtags'));//and bind them into the show blade which shows in a table
     }
 
     /**
@@ -26,7 +26,7 @@ class LawtagController extends Controller
      */
     public function create()
     {
-        return view('admin.lawtag.create');
+        return view('admin.lawtag.create');//render the create blade
     }
 
     /**
@@ -37,16 +37,16 @@ class LawtagController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request,[//validate the data comming from database
             'name' => 'required',
             'slug' => 'required',
         ]);
         $lawtag = new lawtags();
         $lawtag->name = $request->name;
         $lawtag->slug = $request->slug;
-        $lawtag->save();
+        $lawtag->save();//save data in to the database
 
-        return redirect(route('lawtag.index'));
+        return redirect(route('lawtag.index'));//redirect back to the previous page
     }
 
     /**
@@ -66,10 +66,10 @@ class LawtagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)//pass the id as the parameter to the function
     {
-        $lawtags = lawtags::where('id',$id)->first(); ;
-        return view('admin.lawtag.edit',compact('lawtags'));
+        $lawtags = lawtags::where('id',$id)->first();//fetch relevant law detail from database
+        return view('admin.lawtag.edit',compact('lawtags'));//bind that variable to edit blade
     }
 
     /**
@@ -81,17 +81,17 @@ class LawtagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request,[//validate again the fields
             'name' => 'required',
             'slug' => 'required',
         ]);
 
-        $lawtags = lawtags::find($id);
+        $lawtags = lawtags::find($id);//find the relevant detail from the database
         $lawtags->name = $request->name;
         $lawtags->slug = $request->slug;
-        $lawtags->save();
+        $lawtags->save();//update the data in the database
 
-        return redirect(route('lawtag.index'));
+        return redirect(route('lawtag.index'));//redirect back to the previous page
     }
 
     /**
@@ -100,7 +100,7 @@ class LawtagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)//pass the id of law tag as input parameter of the function
     {
         lawtags::where('id',$id)->delete();
         return redirect()->back();

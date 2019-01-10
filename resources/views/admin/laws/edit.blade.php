@@ -45,7 +45,7 @@
                                 </div> 
                             </div>
                             <div class="col-lg-6">
-                                <br>
+                                {{-- <br>
                                 <div class="form-group">
                                     <div class="pull-right">
                                         <label for="image ">File input</label>
@@ -57,7 +57,7 @@
                                         </label>
                                     </div>
                                 </div>  
-                                <br>
+                                <br> --}}
                                 <div class="form-group" style="margin-top:18px;">
                                     <label>Select Tags</label>
                                     <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="lawtags[]">
