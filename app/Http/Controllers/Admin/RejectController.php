@@ -51,7 +51,8 @@ class RejectController extends Controller
         $lawyer->checked = 2;
         $lawyer->save();
         $lawyers = Lawyer::where('checked', 1)->get();
-        return view('admin.lawyer.show',compact('lawyers'));
+        return redirect()->back();
+        // return view('admin.lawyer.show',compact('lawyers'));
     }
 
     /**
