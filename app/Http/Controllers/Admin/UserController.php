@@ -17,10 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('id', '!=', Auth::id())->where(function ($q) {
-            return $q->where('role', 'user');
+        $users = User::where('id', '!=', Auth::id())->where(function ($q) {//fetch all the registered users from the datababse
+            return $q->where('role', 'user');//get users by checking their role column=user
         })->get();
-        return view('admin.user.show',compact('users'));
+        return view('admin.user.show',compact('users'));//see them in table 
     }
 
     /**
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //admin cant create any users
     }
 
     /**
@@ -61,10 +61,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)//pass the id of the user as the parameter to the function
     {
-        $user = User::where('id',$id)->first(); ;
-        return view('admin.user.edit',compact('user'));
+        $user = User::where('id',$id)->first();//find the relevant user by the database
+        return view('admin.user.edit',compact('user'));//bind that user to edit blade
     }
 
     /**
@@ -74,9 +74,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)//pass the id of the user and form request as the parameter to the function
     {
-        $this->validate($request,[
+        $this->validate($request,[//again validate the fields
 
             'honorific' => 'required',
             'name' => 'required',
@@ -93,7 +93,7 @@ class UserController extends Controller
         $userPassword=$request->get('password');
         $encPassword= Hash::make($userPassword);
 
-        $user = User::find($id);
+        $user = User::find($id);//find the relevant user from database
         $user->honorific = $request->honorific;
         $user->name = $request->name;
         $user->lastname = $request->lastname;
@@ -103,9 +103,9 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $encPassword;
         $user->role = $request->role;
-        $user->save();
+        $user->save();//assign new values and update it in the database
 
-        return redirect(route('user.index'));
+        return redirect(route('user.index'));//redirect back to the previous page
     }
 
     /**
@@ -114,9 +114,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)//pass the id of the user as the parameter to the function
     {
-        User::where('id',$id)->delete();
-        return redirect()->back();
+        User::where('id',$id)->delete();//find relevant user from the database and delete it
+        return redirect()->back();//redirect back to the previous page
     }
 }

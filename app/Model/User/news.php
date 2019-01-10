@@ -22,28 +22,23 @@ class news extends Model
         return 'slug';
     }
 
-    // public function getCreatedAtAttribute($value)
-    // {
-    //     return Carbon::parse($value)->diffForHumans();
-    // }
-
     public static function newsearch($keyword) {
 
-        $newsByTags = news::whereHas('tags', function($query) use ($keyword) {
+        $newsByTags = news::whereHas('tags', function($query) use ($keyword) {//get all the laws with the name of keyword== with news tag
             $query->where('name', 'like', '%' . $keyword . '%');
         });
 
-        $newsByCategories = news::whereHas('categories', function($query) use ($keyword) {
+        $newsByCategories = news::whereHas('categories', function($query) use ($keyword) {//get all the laws with the name of keyword== with news category
             $query->where('name', 'like', '%' . $keyword . '%');
         });
 
-        $matchingNews = news::where('title', 'like', '%' . $keyword . '%')
-        ->union(news::where('subtitle', 'like', '%' . $keyword . '%'))
-        ->union(news::where('slug', 'like', '%' . $keyword . '%'))
-        ->union(news::where('body', 'like', '%' . $keyword . '%'));
+        $matchingNews = news::where('title', 'like', '%' . $keyword . '%')//search whether title contain equal words with keyword
+        ->union(news::where('subtitle', 'like', '%' . $keyword . '%'))//search whether subtitle contain equal words with keyword
+        ->union(news::where('slug', 'like', '%' . $keyword . '%'))//search whether slug contain equal words with keyword
+        ->union(news::where('body', 'like', '%' . $keyword . '%'));//search whether body contain equal words with keyword
 
-        $matchingNews = $matchingNews->union($newsByTags)->union($newsByCategories);
+        $matchingNews = $matchingNews->union($newsByTags)->union($newsByCategories);//get all the laws with that keyword
 
-        return $matchingNews->paginate(8);
+        return $matchingNews->paginate(8);//pass all the data as a array
     }
 }

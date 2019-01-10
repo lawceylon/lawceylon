@@ -14,7 +14,7 @@
                     @include('admin.includes.messages')
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{ route('gassettes.update') }}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{ route('gassettes.update',$gassette->id) }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="box-body">
                             <div class="col-lg-6"> 

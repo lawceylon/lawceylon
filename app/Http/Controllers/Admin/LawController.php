@@ -17,8 +17,8 @@ class LawController extends Controller
      */
     public function index()
     {
-        $laws = laws::all();
-        return view('admin.laws.show',compact('laws'));
+        $laws = laws::all();//fetch all laws details published to front end side 
+        return view('admin.laws.show',compact('laws'));//show them in a table
     }
 
     /**
@@ -28,9 +28,9 @@ class LawController extends Controller
      */
     public function create()
     {
-        $lawtags = lawtags::all();
+        $lawtags = lawtags::all();//
         $lawcategories = lawcategories::all();
-        return view('admin.laws.create',compact('lawtags','lawcategories'));
+        return view('admin.laws.create',compact('lawtags','lawcategories'));//load the blade to create new law detail
     }
 
     /**
@@ -42,7 +42,7 @@ class LawController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required',
+            'title' => 'required',//validate fields
             'subtitle' => 'required',
             'slug' => 'required',
             'subcategory1' => 'required',
@@ -59,9 +59,9 @@ class LawController extends Controller
         $laws->subcategory2 = $request->subcategory2;
         $laws->exp = $request->exp;
         $laws->body = $request->body;
-        $laws->save();
+        $laws->save();//save form data after submitting the form create new law detail
 
-        return redirect(route('laws.index'));
+        return redirect(route('laws.index'));//redirect back to previous page
     }
 
     /**
@@ -81,12 +81,12 @@ class LawController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id)//If want to edit law detail pass its id ass the input parameter
     {
-        $law = laws::where('id',$id)->first();
+        $law = laws::where('id',$id)->first();//get the relevent law detail from database
         $lawtags = lawtags::all();
         $lawcategories = lawcategories::all();
-        return view('admin.laws.edit',compact('lawtags','lawcategories','law'));
+        return view('admin.laws.edit',compact('lawtags','lawcategories','law'));//pass that law  detail to another blade for edit purpose
     }
 
     /**
@@ -98,7 +98,7 @@ class LawController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request,[//again validate fields
             'title' => 'required',
             'subtitle' => 'required',
             'slug' => 'required',
@@ -109,7 +109,7 @@ class LawController extends Controller
 
         ]);
 
-        $laws = laws::find($id);
+        $laws = laws::find($id);//find the relevant law detail from data base and assign modified data to it
         $laws->title = $request->title;
         $laws->subtitle = $request->subtitle;
         $laws->slug = $request->slug;
@@ -119,9 +119,9 @@ class LawController extends Controller
         $laws->body = $request->body;
         $laws->lawtags()->sync($request->lawtags);
         $laws->lawcategories()->sync($request->lawcategories);
-        $laws->save();
+        $laws->save();//save data after submitting the form in update view
 
-        return redirect(route('laws.index'));
+        return redirect(route('laws.index'));//redirect back to the previous page
     }
 
     /**
@@ -130,9 +130,9 @@ class LawController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id)///pass the id of law detail to the function
     {
-        laws::where('id',$id)->delete();
+        laws::where('id',$id)->delete();///search relevant law detail by its id and delete
         return redirect()->back();
     }
 }

@@ -13,7 +13,7 @@
                     <!-- small box -->
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>{{ $lwyrs }}<sup style="font-size: 20px">%</sup></h3>
+                            <h3>{{ $lwyrs }}<sup style="font-size: 20px"></sup></h3>
                             <p>Registered Lawyers</p>
                         </div>
                         <div class="icon">
@@ -105,7 +105,7 @@
                 <thead>
                     <tr>
                         <th><h3>Time :-</h3></th>
-                        <th><h3>{{  date('H:i:s',strtotime(Carbon\Carbon::now())) }}</h3></th>
+                        <th><h3>{{  date('H:i',strtotime(Carbon\Carbon::now())) }}</h3></th>
                     </tr>
                 </thead>
             </table>

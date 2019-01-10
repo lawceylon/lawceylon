@@ -21,8 +21,8 @@
                                     <a href="{{ asset('gassettes/').'/'.$gassette->file }}" download><img src="images/icon/7.png" alt="images" class="img-responsive"><span class="glyphicon glyphicon-download-alt">Download Here</span></a>
                                 </div>
                                 <ul>
-                                    <li>{{ $gassette->name }}</li>
-                                    <li>{{ $gassette->subject }}</li>
+                                    <li><h3>{{ $gassette->name }}</h3></li>
+                                    {{-- <li>{{ $gassette->subject }}</li> --}}
                                     <li><a class="btn btn-info" href="{{ route('gassetteView',$gassette->id) }}">View Here</a></li>
                                 </ul>
                             </div><!-- category-avt -->	

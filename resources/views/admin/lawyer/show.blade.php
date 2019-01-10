@@ -32,8 +32,8 @@
                   <th>NIC/Passport Number</th>
                   <th>Bar Number</th>
                   <th>Specialist Area</th>
-                  <th>Experience Period</th>
-                  <th>Address</th>
+                  {{-- <th>Experience Period</th> --}}
+                  {{-- <th>Address</th> --}}
                   <th>Phone</th>
                   {{-- <th>Biography</th> --}}
                   <th>Consultation Fee</th>
@@ -51,8 +51,8 @@
                       <td>{{ $lawyer->NIC_passportNumber }}</td>
                       <td>{{ $lawyer->barnumber }}</td>
                       <td>{{ $lawyer->Specialist_Area }}</td>
-                      <td>{{ $lawyer->Experience_Period }}</td>
-                      <td>{{ $lawyer->Address }}</td>
+                      {{-- <td>{{ $lawyer->Experience_Period }}</td> --}}
+                      {{-- <td>{{ $lawyer->Address }}</td> --}}
                       <td>{{ $lawyer->TP_Number }}</td>
                       {{-- <td>{{ $lawyer->biography }}</td> --}}
                       <td>{{ $lawyer->consultationFee }}</td>
@@ -87,8 +87,8 @@
                   <th>NIC/Passport Number</th>
                   <th>Bar Number</th>
                   <th>Specialist Area</th>
-                  <th>Experience Period</th>
-                  <th>Address</th>
+                  {{-- <th>Experience Period</th> --}}
+                  {{-- <th>Address</th> --}}
                   <th>Phone</th>
                   {{-- <th>Biography</th> --}}
                   <th>Consultation Fee</th>
