@@ -68,6 +68,11 @@ class LawcategoryController extends Controller
      */
     public function edit($id)//pass the id as the parameter to the function
     {
+        //php artisan make:controller PhotoController --resource
+        // function valid_email($email) {
+        //     return !!filter_var($email, FILTER_VALIDATE_EMAIL);
+        // }
+        // 'title' => 'required|unique:posts|max:255'
         // DB::enableQueryLog();
         // $users = User::all();
         // dd(DB::getQueryLog());

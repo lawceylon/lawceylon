@@ -62,7 +62,8 @@
                                 </div>
                                 <div class="col-lg-offset-3  col-lg-6">
                                     <a href="{{ route('unregister.show',$lawyer->id) }}" class="btn btn-primary">Accept</a>
-                                    <form method="post"id="delete-form-{{ $lawyer->id }}" action="{{ route('lawyer.destroy',$lawyer->id) }}" style="dispaly: none">
+                                    <a href="{{ route('rejected.show',$lawyer->id) }}" class="btn btn-danger">Reject</a>
+                                    {{-- <form method="post"id="delete-form-{{ $lawyer->id }}" action="{{ route('lawyer.destroy',$lawyer->id) }}" style="dispaly: none">
                                         {{ csrf_field()}}
                                         {{ method_field('DELETE') }}
                                     </form>
@@ -75,7 +76,7 @@
                                         {
                                             event.preventDefault();
                                         }" class="btn btn-danger">Reject
-                                    </a>
+                                    </a> --}}
                                     <a href="{{ route('unregister.index') }}" class="btn btn-warning">Back</a>
                                 </div>
                             </div>
