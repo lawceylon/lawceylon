@@ -83,6 +83,7 @@ Route::group(['namespace' => 'Admin' ,'middleware' => ['admin']], function() {//
     Route::resource('admin/userMessages','Message\UserMessagesController');
     Route::resource('admin/clientMessages','Message\ClientMessagesController');
     Route::resource('admin/gassettes','GassetteController');
+    Route::resource('admin/rejected','RejectController');
 
 });
 

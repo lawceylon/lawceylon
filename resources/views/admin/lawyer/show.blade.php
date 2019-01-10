@@ -56,7 +56,9 @@
                       <td>{{ $lawyer->TP_Number }}</td>
                       {{-- <td>{{ $lawyer->biography }}</td> --}}
                       <td>{{ $lawyer->consultationFee }}</td>
-                      <td><a href="{{ route('lawyer.edit',$lawyer->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                      @if($lawyer->checked==2)
+                        <td><a class="btn btn-danger" href="{{ route('unregister.edit',$lawyer->id) }}">Rejected</a></td>
+                      @endif
                       <td>
                           <form method="post"id="delete-form-{{ $lawyer->id }}" action="{{ route('lawyer.destroy',$lawyer->id) }}" style="dispaly: none">
                               {{ csrf_field()}}
